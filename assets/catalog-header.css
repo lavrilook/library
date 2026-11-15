@@ -2,3 +2,6 @@
 .catalog-topbar{position:static!important;top:auto!important}#contacts{scroll-margin-top:12px}.category>.cat-header{position:static!important;top:auto!important}
 
 body.reading-scrolled .category>.cat-header{position:sticky!important;top:0!important}body:not(.reading-scrolled) .category>.cat-header{position:static!important;top:auto!important}
+
+/* Blend section headings into the cool page background. */
+.catalog-topbar{background:#eef1f2;border-bottom-color:rgba(146,157,154,.18)}.category>.cat-header{background:linear-gradient(180deg,rgba(238,241,242,0) 0%,rgba(238,241,242,.98) 18%,rgba(238,241,242,.98) 82%,rgba(238,241,242,0) 100%);border-bottom-color:rgba(146,157,154,.25)}
