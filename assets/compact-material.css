@@ -1,0 +1,31 @@
+/* Compact reading layout shared by prompt and reference pages. */
+body{font-size:14px;line-height:1.55}
+.brand{padding-block:14px;font-size:11px;font-weight:500}
+.hero{margin-top:16px;margin-bottom:16px;padding:20px 24px;border-radius:17px}
+h1{font-size:clamp(27px,3vw,36px);line-height:1.14;margin:8px 0 10px}
+h2{font-size:23px;line-height:1.2}h3{font-size:21px;line-height:1.2}
+.hero .kicker{font-size:11px;margin:0 0 8px}.hero .intro{margin-top:10px;font-size:14px}
+.duration{font-size:14px;margin:8px 0 0}.voice{font-size:13px;margin:5px 0 0}
+.hero-facts{margin-top:12px;padding-top:10px;gap:8px 20px}.hero-facts dt,.hero-facts dd{font-size:13px}
+.download{padding:9px 16px;min-height:42px;font-size:13px;margin:12px 0 0}
+.info-grid,.material-intro{gap:10px;margin:16px 0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.info-grid section,.material-intro section{padding:15px 17px;border-radius:14px}
+.info-grid h2,.material-intro h2{font-size:20px;margin:0 0 8px}
+.section-text,.info-grid p,.material-intro p,.info-grid .steps{font-size:13px;line-height:1.5;margin-top:6px}
+.prompt-body{margin:18px auto}.prompt-body h2{font-size:24px}
+.card,.prompt-card{padding:18px 20px;margin-block:16px;border-radius:16px}
+.card-head{gap:10px}.card-head h2{font-size:24px}
+pre,.example pre{font-size:14px;line-height:1.5;letter-spacing:0;margin-top:12px;padding-top:12px}
+.example{padding:17px 19px;margin:16px 0;border-radius:14px}.example h3{margin:0 0 12px}
+.copy,.copy-example{font-size:13px;min-height:44px;padding:9px 14px}
+.prompt-tools{min-height:60px}.prompt-note{font-size:13px;margin:8px 0 12px}
+@media(min-width:1100px){.info-grid,.material-intro{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){
+ .hero{padding:18px;margin-top:12px}.brand{padding-block:12px}
+ .info-grid,.material-intro{grid-template-columns:1fr;gap:8px;margin:12px 0}
+ .info-grid section,.material-intro section{padding:12px 14px}
+ .info-grid h2,.material-intro h2{font-size:19px;margin-bottom:6px}
+ .card,.prompt-card,.example{padding:16px}.hero-facts{grid-template-columns:1fr}
+ pre,.example pre{font-size:14px;line-height:1.5}.card-head h2{font-size:23px}
+}
+@media(max-width:650px){.prompt-box .copy{font-size:12px;padding:8px 9px}.prompt-box .expand{font-size:12px;padding:8px}.prompt-box .button-icon{margin-right:.35em}.prompt-tools{padding-right:8.5rem}}

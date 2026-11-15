@@ -66,7 +66,7 @@ body{font-size:15px}.wrap{width:min(calc(100% - 64px),1200px)}.brand{font-weight
 .hero{padding:28px 32px;margin-top:24px}h1{font-size:clamp(30px,3.7vw,46px)}h2{font-size:27px}.hero .intro{max-width:80ch}.hero-facts{grid-template-columns:1fr 2fr;margin-top:20px;padding-top:16px}
 .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.info-grid section{margin:0;padding:24px;background:var(--white);border:1px solid var(--rule);border-radius:18px}.section-text{font-size:14px;max-width:none}.steps{font-size:14px}.prompt-card{margin-top:24px}pre{font-size:15px}.page-footer{margin:32px auto 0;padding:24px 0;font-size:13px;color:var(--muted);border-top:1px solid var(--rule)}.attribution{font-size:12px;margin:10px 0 0;color:var(--muted)}
 @media(max-width:650px){.wrap{width:calc(100% - 32px)}.hero{padding:22px}.info-grid{grid-template-columns:1fr}.info-grid section{padding:20px}.hero-facts{grid-template-columns:1fr}h2{font-size:25px}.brand{font-weight:500}}
-</style></head>
+</style><link href="../assets/compact-material.css" rel="stylesheet"/></head>
 <body>
 <header class="wrap brand">LAVRI LOOK</header>
 <main class="wrap">
@@ -101,8 +101,6 @@ body{font-size:15px}.wrap{width:min(calc(100% - 64px),1200px)}.brand{font-weight
 <h2 id="next-title">Что дальше</h2>
 <p class="section-text">Добавь профиль в проект в своей нейросети или вставь его в начало нового чата. Например, попроси предложить темы постов на основе вопросов одной конкретной группы.</p>
 </section></div>
-
-
 <section aria-labelledby="prompt-title" class="card prompt-card" id="prompt-card">
 <h2 id="prompt-title">Промпт</h2>
 <p class="prompt-note">Скопируй весь текст и вставь в новый чат выбранной нейросети.</p>
@@ -163,8 +161,6 @@ body{font-size:15px}.wrap{width:min(calc(100% - 64px),1200px)}.brand{font-weight
 <noscript><p class="status">Для копирования кнопкой открой страницу в браузере.</p></noscript>
 </div>
 </section>
-
-
 </main>
 <footer class="wrap page-footer"><span>LAVRI LOOK</span> · <a href="https://t.me/lavri_ai">@lavri_ai</a></footer><script>
   const copyButton = document.querySelector('#copy');
