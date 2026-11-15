@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="description" content="Универсальный промпт LAVRI LOOK для интервью о профессиональном опыте, методе работы и принципах.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Универсальный промпт LAVRI LOOK для интервью о профессиональном опыте, методе работы и принципах." name="description"/>
 <title>База знаний проекта · LAVRI LOOK</title>
 <style>
   :root{--paper:#f6f4ed;--ink:#25332a;--muted:#4c5c52;--wash:#e6eddf;--green:#263f33;--rule:#ccd6c9;--white:#fffcf7}
@@ -31,24 +32,24 @@
   footer { padding: .9rem 0 1.6rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .85rem; }
   a { color: inherit; text-underline-offset: .24em; }
 </style>
-</head>
+<style>body{font:15px/1.65 system-ui,sans-serif}.wrap{width:min(calc(100% - 64px),1200px)}.brand{font-size:12px;font-weight:500;letter-spacing:.14em;padding:20px 0}.hero{padding:28px 32px;background:#e6eddf;margin-top:24px;border-radius:20px}h1{font:400 clamp(30px,3.7vw,46px)/1.12 Georgia,serif;letter-spacing:-.035em}h2{font:400 27px/1.12 Georgia,serif}.card{border-radius:20px;padding:28px 32px}pre{font:15px/1.65 system-ui,sans-serif}.copy{font-size:14px}.page-footer{margin:32px auto 0;padding:24px 0;border-top:1px solid #ccd6c9;font-size:13px;color:#4c5c52}@media(max-width:650px){.wrap{width:calc(100% - 32px)}.hero,.card{padding:22px}h2{font-size:25px}}</style></head>
 <body>
-<header class="wrap brand">LAVRI LOOK · АНАСТАСИЯ</header>
+<header class="wrap brand">LAVRI LOOK</header>
 <main class="wrap">
-  <div class="hero">
-    <p class="kicker">Универсальный промпт</p>
-    <h1>База знаний проекта</h1>
-    <p class="duration">Шаблон постоянных инструкций для AI-партнёра</p>
-    <p class="voice">Заполни поля о своём проекте, оставь нужные разделы и добавь инструкцию в настройки проекта.</p>
-  </div>
-  <section class="card" aria-labelledby="prompt-title">
-    <div class="card-head">
-      <h2 id="prompt-title">Промпт для ChatGPT</h2>
-      <button type="button" class="copy" id="copy">Скопировать инструкцию</button>
-    </div>
-    <p class="status" id="copy-status" role="status" aria-live="polite"></p>
-    <noscript><p class="status">Выдели текст ниже и скопируй его через меню устройства.</p></noscript>
-    <pre id="prompt" tabindex="0" aria-label="Полная инструкция">Ты — постоянный AI-партнёр моего проекта.
+<div class="hero">
+<p class="kicker">Универсальный промпт</p>
+<h1>База знаний проекта</h1>
+<p class="duration">Универсальная база знаний для чата и AI-агента</p>
+<p class="voice">Подходит для ChatGPT, Claude и агентов, работающих с кодом. Заполни поля и выбери подходящий способ подключения ниже.</p>
+</div><section class="card"><h2>Как подключить базу знаний</h2><p><strong>ChatGPT и Claude:</strong> сохрани заполненную инструкцию в настройках проекта. Документы, примеры и справочную информацию добавь в файлы проекта. В обычном чате можно вставить инструкцию первым сообщением.</p><p><strong>Claude Code:</strong> правила проекта сохрани в CLAUDE.md, а материалы — в отдельной папке проекта.</p><p><strong>Codex и другие агенты:</strong> используй поддерживаемый файл правил, например AGENTS.md для Codex. Укажи, где лежат материалы, и попроси прочитать их перед задачей.</p><p>База знаний — это твои правила и материалы. Она не даёт автоматический доступ ко всем чатам, файлам или сервисам: доступ зависит от инструмента и его настроек.</p></section>
+<section aria-labelledby="prompt-title" class="card">
+<div class="card-head">
+<h2 id="prompt-title">Промпт для ChatGPT</h2>
+<button class="copy" id="copy" type="button">Скопировать инструкцию</button>
+</div>
+<p aria-live="polite" class="status" id="copy-status" role="status"></p>
+<noscript><p class="status">Выдели текст ниже и скопируй его через меню устройства.</p></noscript>
+<pre aria-label="Полная инструкция" id="prompt" tabindex="0">Ты — постоянный AI-партнёр моего проекта.
 
 О проекте
 Название: [название проекта].
@@ -501,7 +502,7 @@ AI-видео
 
 
 Принцип работы с базой знаний
-Используй доступную тебе информацию из файлов проекта и сообщений как единую базу знаний проекта. Если у тебя нет доступа к другому чату, попроси нужный контекст.
+Используй доступную тебе информацию из файлов проекта и сообщений как единую базу знаний проекта. Если у тебя нет доступа к другому чату или файлу, попроси нужный контекст. Не заявляй, что прочитал недоступные материалы.
 
 Не заставляй пользователя повторять информацию, которая уже находится в
 проекте.
@@ -529,9 +530,9 @@ AI-видео
   — применимым на практике
   — соответствующим задаче бренда или клиента
 Качество, достоверность и польза важнее скорости и количества вариантов.</pre>
-  </section>
+</section>
 </main>
-<footer class="wrap"><a href="../../">← Библиотека LAVRI LOOK</a></footer>
+
 <script>
   const button = document.querySelector('#copy');
   const prompt = document.querySelector('#prompt');
@@ -567,5 +568,5 @@ AI-видео
     }
   });
 </script>
-</body>
+<footer class="wrap page-footer"><a href="../../">← Библиотека</a> · LAVRI LOOK · <a href="https://t.me/lavri_ai">@lavri_ai</a></footer></body>
 </html>
