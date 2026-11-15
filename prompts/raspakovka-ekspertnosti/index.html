@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="description" content="Универсальный промпт LAVRI LOOK для интервью о профессиональном опыте, методе работы и принципах.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="Универсальный промпт LAVRI LOOK для интервью о профессиональном опыте, методе работы и принципах." name="description"/>
 <title>Распаковка экспертности · LAVRI LOOK</title>
 <style>
   :root{--paper:#f6f4ed;--ink:#25332a;--muted:#4c5c52;--wash:#e6eddf;--green:#263f33;--rule:#ccd6c9;--white:#fffcf7}
@@ -31,24 +32,29 @@
   footer { padding: .9rem 0 1.6rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .85rem; }
   a { color: inherit; text-underline-offset: .24em; }
 </style>
-</head>
+<style>
+body{font-size:15px}.wrap{width:min(calc(100% - 64px),1200px)}.brand{font-weight:500;font-size:12px;letter-spacing:.14em;padding-block:20px}
+.hero{padding:28px 32px;margin-top:24px}h1{font-size:clamp(30px,3.7vw,46px)}h2{font-size:27px}.hero .intro{max-width:80ch}.hero-facts{grid-template-columns:1fr 2fr;margin-top:20px;padding-top:16px}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.info-grid section{margin:0;padding:24px;background:var(--white);border:1px solid var(--rule);border-radius:18px}.section-text{font-size:14px;max-width:none}.steps{font-size:14px}.prompt-card{margin-top:24px}pre{font-size:15px}.page-footer{margin:32px auto 0;padding:24px 0;font-size:13px;color:var(--muted);border-top:1px solid var(--rule)}.attribution{font-size:12px;margin:10px 0 0;color:var(--muted)}
+@media(max-width:650px){.wrap{width:calc(100% - 32px)}.hero{padding:22px}.info-grid{grid-template-columns:1fr}.info-grid section{padding:20px}.hero-facts{grid-template-columns:1fr}h2{font-size:25px}.brand{font-weight:500}}
+</style></head>
 <body>
-<header class="wrap brand">LAVRI LOOK · АНАСТАСИЯ</header>
+<header class="wrap brand">LAVRI LOOK</header>
 <main class="wrap">
-  <div class="hero">
-    <p class="kicker">Универсальный промпт</p>
-    <h1>Распаковка экспертности</h1>
-    <p class="duration">На интервью ориентировочно 30–60 минут</p>
-    <p class="voice">Отвечать можно голосом или текстом.</p>
-  </div>
-  <section class="card" aria-labelledby="prompt-title">
-    <div class="card-head">
-      <h2 id="prompt-title">Промпт для ChatGPT</h2>
-      <button type="button" class="copy" id="copy">Скопировать промпт</button>
-    </div>
-    <p class="status" id="copy-status" role="status" aria-live="polite"></p>
-    <noscript><p class="status">Выдели текст ниже и скопируй его через меню устройства.</p></noscript>
-    <pre id="prompt" tabindex="0" aria-label="Полный текст промпта">Помоги мне описать мою экспертность на основе реального опыта. Проведи интервью и собери один документ, который я смогу добавить в проект ChatGPT как контекст о себе. В диалоге задавай по одному вопросу и жди ответа. Учитывай то, что я уже рассказала или рассказал. Если ответ звучит слишком общо, попроси пример.
+<div class="hero">
+<p class="kicker">Универсальный промпт · Бесплатно</p>
+<h1>Распаковка экспертности</h1>
+<p class="duration">На интервью ориентировочно 30–60 минут</p>
+<p class="voice">Отвечать можно голосом или текстом.</p>
+</div><div class="info-grid"><section><h2>Зачем это нужно</h2><p class="section-text">Чтобы описать свою специализацию, опыт и принципы работы на конкретных примерах. Это поможет яснее рассказывать о себе и давать AI контекст для будущих задач.</p></section><section><h2>Как пользоваться</h2><p class="section-text">Скопируй промпт в новый чат ChatGPT или Claude. Приложи прошлую распаковку, кейсы или отзывы, если они есть. Отвечай голосом или текстом; на интервью ориентировочно 30–60 минут.</p></section><section><h2>Что получится</h2><p class="section-text">Документ «Распаковка экспертности»: специализация, путь, ценности, метод работы, принципы, ограничения и подтверждённые примеры.</p></section><section><h2>Что дальше</h2><p class="section-text">Проверь факты и формулировки. Сохрани документ и добавь его в свой AI-проект как контекст. Обновляй по мере появления нового опыта и кейсов.</p></section></div>
+<section aria-labelledby="prompt-title" class="card">
+<div class="card-head">
+<h2 id="prompt-title">Промпт для ChatGPT</h2>
+<button class="copy" id="copy" type="button">Скопировать промпт</button>
+</div>
+<p aria-live="polite" class="status" id="copy-status" role="status"></p>
+<noscript><p class="status">Выдели текст ниже и скопируй его через меню устройства.</p></noscript>
+<pre aria-label="Полный текст промпта" id="prompt" tabindex="0">Помоги мне описать мою экспертность на основе реального опыта. Проведи интервью и собери один документ, который я смогу добавить в проект ChatGPT как контекст о себе. В диалоге задавай по одному вопросу и жди ответа. Учитывай то, что я уже рассказала или рассказал. Если ответ звучит слишком общо, попроси пример.
 
 <strong>0. Проверь, что у меня уже есть</strong>
 Спроси, делала ли я или делал ли я распаковку раньше и какие материалы могу приложить: кейсы, отзывы, заметки, посты или расшифровки. Если есть готовый документ, уточни, стоит ли его обновить. Если я готова или готов отвечать, проведи интервью и уточни пробелы. Если доступен только материал, собери черновик и отметь, что нужно подтвердить. Если материала нет и я не отвечаю на вопросы, попроси исходные данные.
@@ -67,10 +73,10 @@
 
 <strong>Итог</strong>
 Собери документ «Распаковка экспертности». Включи краткое описание моей специализации, путь и ценности, метод с этапами, принципы и инструменты, ограничения в работе и контенте, подтверждённые примеры и открытые вопросы. Если описание основано только на материалах, укажи статус «Черновик для проверки». Начни с вопроса о том, есть ли у меня предыдущая распаковка.</pre>
-  </section>
+</section>
 </main>
-<footer class="wrap">Время и структура по <a href="https://platform.anticourses.com/share/sot5wssxix/p/137">уроку «Распаковка экспертности»</a>.</footer>
-<script>
+
+<footer class="wrap page-footer"><span>LAVRI LOOK</span> · <a href="https://t.me/lavri_ai">@lavri_ai</a><p class="attribution">По мотивам урока «Распаковка экспертности» на платформе Anticourses. Бесплатный материал в адаптации LAVRI LOOK.</p></footer><script>
   const button = document.querySelector('#copy');
   const prompt = document.querySelector('#prompt');
   const status = document.querySelector('#copy-status');
