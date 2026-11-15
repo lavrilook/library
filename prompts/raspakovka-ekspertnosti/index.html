@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Универсальный промпт LAVRI LOOK для интервью о профессиональном опыте, методе работы и принципах.">
+<title>Распаковка экспертности · LAVRI LOOK</title>
+<style>
+  :root{--paper:#f6f4ed;--ink:#25332a;--muted:#4c5c52;--wash:#e6eddf;--green:#263f33;--rule:#ccd6c9;--white:#fffcf7}
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+  .wrap { width: min(100% - 2rem, 51rem); margin-inline: auto; }
+  .brand { padding-block: 1.15rem; border-bottom: 1px solid var(--rule); font-size: .75rem; font-weight: 800; letter-spacing: .17em; }
+  .hero { margin-top: 1.25rem; padding: clamp(1.3rem, 5vw, 2.7rem); background: var(--wash); border-radius: 1.35rem; }
+  .kicker { margin: 0 0 .55rem; text-transform: uppercase; letter-spacing: .1em; font-size: .73rem; font-weight: 750; }
+  h1, h2 { margin: 0; font-family: Georgia, 'Noto Serif', serif; font-weight: 400; line-height: 1.12; }
+  h1 { font-size: clamp(1.95rem, 6.9vw, 3.65rem); letter-spacing: -.035em; }
+  h2 { font-size: clamp(1.45rem, 4vw, 2rem); }
+  .duration { margin: .85rem 0 0; font-weight: 700; }
+  .voice { margin: .15rem 0 0; color: var(--muted); }
+  .card { margin-block: 1.25rem; padding: clamp(1rem, 4vw, 2rem); background: var(--white); border: 1px solid var(--rule); border-radius: 1.25rem; }
+  .card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem; }
+  .copy { min-height: 44px; padding: .55rem .9rem; border: 1px solid var(--green); border-radius: .6rem; background: var(--green); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+  .copy:hover { background: #385746; }
+  :focus-visible { outline: 3px solid #607d51; outline-offset: 4px; }
+  .status { margin: .65rem 0 0; color: var(--muted); font-size: .875rem; }
+  .status:empty { margin: 0; }
+  pre { margin: 1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--rule); font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+  pre strong { font-weight: 750; }
+  footer { padding: .9rem 0 1.6rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .85rem; }
+  a { color: inherit; text-underline-offset: .24em; }
+</style>
+</head>
+<body>
+<header class="wrap brand">LAVRI LOOK · АНАСТАСИЯ</header>
+<main class="wrap">
+  <div class="hero">
+    <p class="kicker">Универсальный промпт</p>
+    <h1>Распаковка экспертности</h1>
+    <p class="duration">На интервью ориентировочно 30–60 минут</p>
+    <p class="voice">Отвечать можно голосом или текстом.</p>
+  </div>
+  <section class="card" aria-labelledby="prompt-title">
+    <div class="card-head">
+      <h2 id="prompt-title">Промпт для ChatGPT</h2>
+      <button type="button" class="copy" id="copy">Скопировать промпт</button>
+    </div>
+    <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+    <noscript><p class="status">Выдели текст ниже и скопируй его через меню устройства.</p></noscript>
+    <pre id="prompt" tabindex="0" aria-label="Полный текст промпта">Помоги мне описать мою экспертность на основе реального опыта. Проведи интервью и собери один документ, который я смогу добавить в проект ChatGPT как контекст о себе. В диалоге задавай по одному вопросу и жди ответа. Учитывай то, что я уже рассказала или рассказал. Если ответ звучит слишком общо, попроси пример.
+
+<strong>0. Проверь, что у меня уже есть</strong>
+Спроси, делала ли я или делал ли я распаковку раньше и какие материалы могу приложить: кейсы, отзывы, заметки, посты или расшифровки. Если есть готовый документ, уточни, стоит ли его обновить. Если я готова или готов отвечать, проведи интервью и уточни пробелы. Если доступен только материал, собери черновик и отметь, что нужно подтвердить. Если материала нет и я не отвечаю на вопросы, попроси исходные данные.
+
+<strong>1. Разбери мой путь и практику</strong>
+Узнай, в какой сфере я работаю, кому помогаю и с какими задачами ко мне обращаются. Спроси, чем сформирован мой подход, что для меня важно в работе и за что меня ценят. Разбери конкретные случаи: исходная ситуация, мои решения и наблюдаемый результат. Если работаю с частными клиентами, выясни, что меняется для человека. Если работаю с компаниями или партнёрами, уточни, как меняются их процессы или результаты. Учитывай качественные результаты, когда цифр нет.
+
+<strong>2. Восстанови мой метод</strong>
+Начни с результата и восстанови путь к нему. Выдели повторяющиеся этапы и поясни, что я адаптирую под задачу. Спроси, какие правила помогают мне принимать решения, какие вопросы, шаблоны и инструменты я использую и от каких распространённых приёмов сознательно отказываюсь. Покажи четыре формы: цепочка для шагов в заданном порядке, цикл для повторяющихся проходов, уровни для углубления и фазы для этапов с разными задачами. Предложи форму на основе моих примеров и согласуй её со мной. Если у метода есть название, сохрани его. Если нет, предложи придумать его вместе.
+
+<strong>3. Зафиксируй границы контента</strong>
+Узнай, каких тем, форматов, выражений, способов продвижения и обещаний я избегаю. Для каждого важного ограничения уточни причину. Опирайся на решения, которые я могу объяснить на примерах.
+
+<strong>4. Проверь документ перед выдачей</strong>
+Проверь, отражает ли описание мою специфику, понятны ли действия на каждом этапе, повторяется ли подход в разных случаях, соответствует ли моим ценностям и можно ли кратко его пересказать. Если чего-то не хватает, задай точечный вопрос. Отличай [мой ответ], [материал: название], [гипотеза] и [нужно уточнить]. Приводи только подтверждённые цифры, кейсы и цитаты.
+
+<strong>Итог</strong>
+Собери документ «Распаковка экспертности». Включи краткое описание моей специализации, путь и ценности, метод с этапами, принципы и инструменты, ограничения в работе и контенте, подтверждённые примеры и открытые вопросы. Если описание основано только на материалах, укажи статус «Черновик для проверки». Начни с вопроса о том, есть ли у меня предыдущая распаковка.</pre>
+  </section>
+</main>
+<footer class="wrap">Время и структура по <a href="https://platform.anticourses.com/share/sot5wssxix/p/137">уроку «Распаковка экспертности»</a>.</footer>
+<script>
+  const button = document.querySelector('#copy');
+  const prompt = document.querySelector('#prompt');
+  const status = document.querySelector('#copy-status');
+
+  button.addEventListener('click', async () => {
+    const text = prompt.textContent.trim();
+    status.textContent = '';
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = 'Промпт скопирован.';
+      return;
+    } catch {
+      prompt.focus({ preventScroll: true });
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(prompt);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      let copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch {
+        // The selection stays available when the browser blocks copying.
+      }
+      if (copied) {
+        selection.removeAllRanges();
+        button.focus({ preventScroll: true });
+      }
+      status.textContent = copied
+        ? 'Промпт скопирован.'
+        : 'Промпт выделен. Нажми «Копировать» в меню устройства.';
+    }
+  });
+</script>
+</body>
+</html>
