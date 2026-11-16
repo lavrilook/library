@@ -1,0 +1,7 @@
+/* Keep category order and menu rows aligned. */
+.cat-nav{display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
+.cat-menu-group{display:flex;flex-wrap:wrap;align-items:center;gap:7px 9px;min-width:0}
+.cat-menu-group+.cat-menu-group{border-top:1px solid rgba(146,157,154,.17);padding-top:9px}
+.cat-menu-group .cat-pill{max-width:100%;min-width:0;white-space:normal;text-align:left}
+.cat-menu-group[aria-label="Нейросети"] a[href="#workflow-chatgpt"],.cat-menu-group[aria-label="Нейросети"] a[href="#workflow-claude"]{min-width:100px;justify-content:center}
+@media(max-width:650px){.cat-nav{gap:8px}.cat-menu-group{gap:7px}.cat-menu-group+.cat-menu-group{padding-top:8px}.cat-menu-group .cat-pill{padding:8px 12px;font-size:12px;line-height:1.4;min-height:44px}.cat-menu-group[aria-label="Нейросети"] a[href="#workflow-common-title"]{flex-basis:100%;width:max-content;flex-grow:0}}
