@@ -12,3 +12,5 @@
 @media(max-width:650px){.workflow-columns{grid-template-columns:1fr;gap:20px}.workflow-column>h3,.workflow-common>h3{font-size:21px}#ai-workflow .workflow-materials>.entry{padding:13px 14px}#ai-workflow .entry h4{font-size:18px}.workflow-common{margin-top:20px}}
 
 #workflow-claude,#workflow-chatgpt,#workflow-common-title{scroll-margin-top:110px}
+
+.cat-nav a[href="#workflow-claude"],.cat-nav a[href="#workflow-chatgpt"]{font-weight:700}
