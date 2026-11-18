@@ -66,6 +66,8 @@ code{overflow-wrap:anywhere}
 footer{margin-top:3rem;padding:1rem 0 2rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 a{color:inherit;text-underline-offset:.22em}
 :focus-visible{outline:3px solid #607d51;outline-offset:3px}
+.qa details{margin:.6rem 0;background:var(--white);border:1px solid var(--rule);border-radius:1rem;padding:.2rem 1.1rem}.qa summary{cursor:pointer;font-weight:600;padding:.8rem 0;list-style:none}.qa summary::-webkit-details-marker{display:none}.qa summary::before{content:"＋";color:var(--accent);margin-right:.6rem}.qa details[open] summary::before{content:"−"}.qa details>div{padding:0 0 1rem}
+.cta-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.6rem 0;padding:1rem 1.2rem;background:var(--wash);border-radius:1rem}
 .page{display:none}.page.on{display:block}
 @media(max-width:700px){.choose,.two,.feat,.offer{grid-template-columns:1fr}.cmp{font-size:.88rem}.cmp td:first-child{width:auto}.help,.help tbody,.help tr,.help td{display:block;width:auto!important}.help td:first-child{border-bottom:0;padding-bottom:0}}
 @media print{.tabs,.copy,.next{display:none}.page{display:block!important}}
@@ -151,6 +153,7 @@ a{color:inherit;text-underline-offset:.22em}
 <p>Когда агент напишет <b>«✅ Готово и проверено»</b>, откройте демо-ролик со звуком. Всё установлено. Первый запуск дольше — агент скачивает модель распознавания речи.</p>
 <figure><img alt="Агент сообщает, что демо готово" loading="lazy" src="img/step-3-demo.jpg"/></figure>
 <p class="note">Установка — один раз. Дальше просто открывайте эту папку в Claude Code.</p></div>
+<div class="cta-line"><span>Не получается установить — настроим вместе.</span><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#first">Первый ролик →</a></div>
 </section>
 
@@ -255,6 +258,7 @@ python3 -m venv .venv &amp;&amp; \
 <figure><img alt="В новой сессии выбрать свой репозиторий" loading="lazy" src="img/c5-repo.jpg"/></figure>
 <p class="note">Новая сессия нужна и после любых изменений настроек среды (домены, ключ Pixabay, коннекторы) — старая их не увидит. Один ролик лучше вести в одной сессии от начала до финала.</p>
 <p class="note"><b>На компьютере</b> так же: новый чат в Code → «Этот компьютер» → та же папка агента.</p></div>
+<div class="cta-line"><span>Не получается установить — настроим вместе.</span><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#first">Первый ролик →</a></div>
 </section>
 
@@ -390,25 +394,24 @@ python3 -m venv .venv &amp;&amp; \
 <div class="copybox"><div class="head">Научись новому<button class="copy" type="button">Скопировать</button></div><pre>Ты умеешь делать ВОТ ТАКОЙ ПРИЁМ (пример: ссылка на Reels или скриншот)? Если нет — можешь научиться? Что тебе для этого нужно и сколько времени займёт?</pre></div>
 <div class="copybox"><div class="head">Отчёт по ошибке и исправление<button class="copy" type="button">Скопировать</button></div><pre>Здесь была ошибка: ЧТО СЛУЧИЛОСЬ. Дай короткий отчёт: что сломалось, почему, как исправить. Исправь сам, проверь, что работает, и запиши, чтобы это не повторялось.</pre></div>
 <div class="copybox"><div class="head">Запомни на будущее<button class="copy" type="button">Скопировать</button></div><pre>Запомни это правило для всех следующих роликов: ПРАВИЛО (например: субтитры у меня всегда белые, без плашки).</pre></div></div>
-<h2>На компьютере</h2>
-<table class="cmp help"><tbody>
-<tr><td>Нет вкладки Code</td><td>Нужен тариф Pro или выше и свежая версия приложения Claude.</td></tr>
-<tr><td>Агент не может читать файлы или запускать команды</td><td>Выбран не тот режим: Code → <b>Local / «Этот компьютер»</b> → ваша папка, новый чат.</td></tr>
-<tr><td>«FFmpeg / Python не найден»</td><td>Напишите «Установи сам». Mac — через Homebrew, Windows — через winget. Пароль — в окне системы.</td></tr>
-<tr><td>Не скачивается модель распознавания</td><td>Проверьте интернет и напишите: «Выполни npm run setup:python ещё раз».</td></tr>
-<tr><td>Закончились лимиты Claude</td><td>Работа не теряется: продолжите позже в той же папке.</td></tr>
-</tbody></table>
-<h2>В облаке</h2>
-<table class="cmp help"><tbody>
-<tr><td>Ошибка 403</td><td>Нет галочки <b>Allow package managers</b> → <a href="#cl-3">шаг 3</a>.</td></tr>
-<tr><td>Не скачиваются ролики Instagram / YouTube / TikTok</td><td>В доменах нет звёздочек → <a href="#cl-domains">замените список целиком</a>.</td></tr>
-<tr><td>Агент не видит Google Диск или Higgsfield</td><td>Подключите коннектор и откройте новую сессию → <a href="#cl-4">шаг 4</a>.</td></tr>
-<tr><td>Higgsfield: баланс виден, генерации нет</td><td>Подключён урезанный «Higgsfield AI» → свой коннектор <code>https://mcp.higgsfield.ai/mcp</code>.</td></tr>
-<tr><td>Не загружается свой кадр в Higgsfield</td><td>Нет <code>upload.higgsfield.ai</code> в доменах → новая сессия.</td></tr>
-<tr><td>Агент не видит репозиторий</td><td>В GitHub Integration выберите свой <code>XXX</code> → <a href="#cl-2">шаг 2</a>.</td></tr>
-<tr><td>Нет «Готово и проверено»</td><td>Повторите <a href="#cl-6">шаг 6</a>, пришлите скриншот ответа.</td></tr>
-</tbody></table>
-<p class="note">Не получилось за 2–3 попытки или хотите под ключ — <a href="#get">забронируйте консультацию</a>: настроим вместе.</p>
+<h2>Вопрос — ответ: компьютер</h2>
+<div class="qa"><details><summary>Не вижу вкладку Code. Где найти Claude Code?</summary><div><p>Claude Code есть на тарифе <b>Pro</b> и выше — на бесплатном его нет. Обновите приложение Claude для компьютера (<a href="https://claude.com/download" rel="noopener" target="_blank">claude.com/download</a>). В приложении переключитесь с <b>Chat</b> на <b>Code</b> — см. схему в <a href="#pc-2">шаге 2</a>.</p></div></details>
+<details><summary>Агент пишет, что не может читать файлы или запускать команды</summary><div><p>Выбран не тот режим. Code → <b>Local / «Этот компьютер»</b> → папка агента → новый чат.</p></div></details>
+<details><summary>«FFmpeg не найден», «Python не найден» — какие-то программы не установлены</summary><div><p>Напишите агенту <b>«Установи сам»</b>. На Mac он поставит через Homebrew, на Windows — через winget. Если система попросит пароль — введите его в окне системы, не в чате.</p></div></details>
+<details><summary>Не скачивается модель распознавания речи</summary><div><p>Проверьте интернет и напишите: «Выполни npm run setup:python ещё раз».</p></div></details>
+<details><summary>Что если закончатся лимиты Claude посреди монтажа?</summary><div><p>Работа не потеряется: агент сохраняет каждый шаг, продолжите позже в той же папке. Агент уже настроен на экономию лимитов, но вы можете попросить его работать поэтапно и предупреждать заранее:</p><div class="copybox"><div class="head">Экономно<button class="copy" type="button">Скопировать</button></div><pre>Работай поэтапно и экономно. Перед каждым большим шагом скажи, сколько примерно это займёт по времени и лимитам. Если лимиты подходят к концу — остановись на удобном месте, сохрани, что сделано, и напиши, с чего продолжить.</pre></div></div></details>
+</div>
+<h2>Вопрос — ответ: облако</h2>
+<div class="qa"><details><summary>Ошибка 403</summary><div><p>Нет галочки <b>Allow package managers</b> в настройках среды → <a href="#cl-3">шаг 3</a>.</p></div></details>
+<details><summary>Агент не видит Google Диск</summary><div><p>Проверьте, что Google Drive подключён: claude.ai → Customize → Connectors. Если подключён — отключите и подключите заново, затем откройте <a href="#cl-9">новую сессию</a>.</p></div></details>
+<details><summary>Агент не видит Higgsfield</summary><div><p>Проверьте, что Higgsfield есть в Customize → Connectors и подключён к вашему аккаунту. После подключения — <a href="#cl-9">новая сессия</a>.</p></div></details>
+<details><summary>Higgsfield: баланс виден, а генерации нет</summary><div><p>Подключён урезанный коннектор «Higgsfield AI». Удалите его (⋯ → Remove) и добавьте вручную: <b>+ Add → Add custom connector</b>, Name: Higgsfield, URL <code>https://mcp.higgsfield.ai/mcp</code> → Connect → вход в свой аккаунт. Затем в <b>Tool permissions</b> поставьте разрешения на все инструменты — появятся генерация фото и видео. Новая сессия.</p></div></details>
+<details><summary>Не загружаются файлы в Higgsfield или не скачиваются генерации и ролики</summary><div><p>Не хватает домена в настройках среды. Замените список доменов целиком — <a href="#cl-domains">шаг 3, домены</a> — и откройте новую сессию.</p></div></details>
+<details><summary>Агент не видит репозиторий</summary><div><p>В GitHub Integration должен быть выбран ваш <code>XXX</code> → <a href="#cl-2">шаг 2</a>.</p></div></details>
+<details><summary>Нет «Готово и проверено» после установки</summary><div><p>Повторите <a href="#cl-6">шаг 6</a>. Не помогло — пришлите скриншот ответа агента.</p></div></details>
+<details><summary>Что если закончатся лимиты Claude?</summary><div><p>Агент сохраняет работу в репозиторий — продолжите в новой сессии. Попросите работать экономно:</p><div class="copybox"><div class="head">Экономно<button class="copy" type="button">Скопировать</button></div><pre>Работай поэтапно и экономно. Перед каждым большим шагом скажи, сколько примерно это займёт по времени и лимитам. Если лимиты подходят к концу — остановись на удобном месте, сохрани, что сделано, и напиши, с чего продолжить.</pre></div></div></details>
+</div>
+<div class="cta-line"><span>Не получилось за 2–3 попытки — настроим вместе.</span><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#edits">← Правки</a><a class="btn" href="#get">Получить агента →</a></div>
 </section>
 
