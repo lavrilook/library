@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Свой монтажный агент LAVRI Cut в Claude Code на компьютере: установка по шагам, первый ролик, правки словами и в редакторе, звуки, шрифты, распаковка блога." name="description"/><title>LAVRI Cut: свой монтажный агент на компьютере · LAVRI LOOK</title><link href="../../assets/guide.css" rel="stylesheet"/><link href="../../assets/footer-links.css" rel="stylesheet"/><link href="../../assets/reading-navigation.css?v=nav-retry-6" rel="stylesheet"/>
+<style>
+.topic>ul,.topic>ol{margin:14px 0 24px}.topic li{margin:8px 0}.topic h4{margin-top:22px}
+.guide-navigation{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.guide-navigation a{display:inline-flex;min-height:44px;align-items:center;padding:9px 14px;border:1px solid #ccd6c9;border-radius:10px;text-decoration:none;background:#fffcf7;font-size:13px}
+figure{margin:20px 0 26px}figure img{display:block;width:100%;height:auto;border:1px solid #ccd6c9;border-radius:16px;background:#fffcf7}figcaption{font-size:13px;color:#4c5c52;margin-top:8px}
+.shots{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.path{background:#fffcf7;border:1px solid #ccd6c9;border-radius:16px;padding:18px 20px}.path h4{margin-top:0}.path.on{background:#e6eddf;border-color:#829488}
+.cta{display:inline-flex;align-items:center;gap:10px;background:#263f33;color:#fff;border-radius:28px;padding:14px 22px;text-decoration:none;font-size:15px;margin:10px 0}
+.consultation-note{margin-top:20px;padding:18px 20px;background:#e6eddf;border:1px solid #ccd6c9;border-radius:14px}.consultation-note h4{margin-top:0}
+.trouble{width:100%;border-collapse:collapse;font-size:15px}.trouble td,.trouble th{border-bottom:1px solid #ccd6c9;padding:10px 8px;text-align:left;vertical-align:top}.trouble th{font-weight:500;color:#5e745f}
+@media(max-width:800px){.shots,.paths{grid-template-columns:1fr}.trouble{font-size:14px}}
+</style></head><body><header class="wrap brand" id="page-top" tabindex="-1"><a href="../../">LAVRI LOOK</a></header><main class="wrap">
+<nav aria-label="Навигация руководства" class="guide-navigation"><a href="../../">← Библиотека</a><a href="#contents">☰ Содержание</a></nav>
+<div class="hero"><p class="kicker">ГАЙД · CLAUDE CODE НА КОМПЬЮТЕРЕ</p><h1>LAVRI Cut: свой монтажный агент за один вечер</h1><p>Готовый агент-монтажёр для Reels. Он чистит паузы и шум, ставит субтитры, плашки, звуки и переходы. Правки он принимает словами или в редакторе. Решения остаются за вами.<br/>Распаковываете архив, вставляете один промт — агент ставит всё сам. Без программирования, без GitHub и без созвона.</p></div>
+<h2 id="contents">Содержание</h2>
+<nav aria-label="Разделы руководства" class="toc"><a href="#what">Что внутри агента<span aria-hidden="true">☞</span></a><a href="#install">Установка на компьютер<span aria-hidden="true">☞</span></a><a href="#first">Первый ролик<span aria-hidden="true">☞</span></a><a href="#edits">Как попросить правку<span aria-hidden="true">☞</span></a><a href="#editor">Редактор: правка пальцем и мышкой<span aria-hidden="true">☞</span></a><a href="#more">Звуки, шрифты, распаковка блога<span aria-hidden="true">☞</span></a><a href="#trouble">Если не получилось<span aria-hidden="true">☞</span></a><a href="#cloud">Облако и телефон<span aria-hidden="true">☞</span></a><a href="#get">Получить агента<span aria-hidden="true">☞</span></a></nav>
+<a class="cta" href="https://t.me/pay_lavri_ai_bot">Получить архив LAVRI Cut →</a>
+<div class="reading-layout"><aside class="sidebar"><a href="#what">Что внутри</a><a href="#install">Установка</a><a href="#first">Первый ролик</a><a href="#edits">Правки</a><a href="#editor">Редактор</a><a href="#more">Звуки и шрифты</a><a href="#trouble">Если не получилось</a><a href="#cloud">Облако и телефон</a><a href="#get">Получить агента</a></aside><article class="reading-content">
+
+<section class="topic" id="what"><p class="label">ПЕРЕД НАЧАЛОМ</p><h3>ЧТО ВНУТРИ АГЕНТА</h3>
+<p>LAVRI Cut — это не промт, а готовый агент. В нём методика монтажа, по которой работает LAVRI LOOK: правила, проверенные приёмы и инструменты. Claude не собирает монтажёра с нуля, он сразу работает по готовой системе.</p>
+<ul><li><b>Чистовой исходник:</b> убирает шум, паузы, «эээ», повторы и дубли. Перед монтажом показывает таблицу «оставить / вырезать», решаете вы.</li>
+<li><b>Субтитры:</b> 13 стилей — от спокойных до «по слову». Субтитры не закрывают лицо и не уходят под кнопки Instagram.</li>
+<li><b>Графика:</b> плашки, счётчик «1/5», цифры, списки, карточки, переписка, таймер, оценка 10/10, доска, разбор с рисунком.</li>
+<li><b>Звук:</b> 48 звуковых эффектов, музыка уступает голосу, громкость под Reels.</li>
+<li><b>Образ:</b> цвета и пары шрифтов с лицензией для роликов. Ваш стиль сохраняется для следующих видео.</li>
+<li><b>Обложки и карусели</b> в том же стиле.</li>
+<li><b>Тройная приёмка:</b> агент не назовёт ролик готовым, пока не проверит звук, чёрные кадры, синхрон и безопасную зону.</li></ul>
+<p class="note">Агент учится на ваших роликах: удачные приёмы и ваши правки он записывает и повторяет в следующих видео.</p></section>
+
+<section class="topic" id="install"><p class="label">ШАГИ 1–4</p><h3>УСТАНОВКА НА КОМПЬЮТЕР</h3>
+<p><b>Понадобится:</b> компьютер Mac или Windows, приложение Claude с вкладкой <b>Code</b> (платный тариф Pro или Max), около 5 ГБ свободного места и 20–30 минут на первую установку.</p>
+<h4>1. Создайте папку и положите в неё архив</h4>
+<p>Создайте папку <b>LAVRI Cut</b> (например, в «Документах»). Положите в неё архив, который пришлёт бот после оплаты. Распаковывать вручную не обязательно — агент сделает это сам.</p>
+<figure><img alt="Схема: папка LAVRI Cut с архивом и содержимым после распаковки" loading="lazy" src="img/step-1-papka.jpg"/><figcaption>Схема. После распаковки в папке появятся звуки, шрифты, папка input для ваших видео и сам агент.</figcaption></figure>
+<h4>2. Откройте папку в Claude Code</h4>
+<p>Откройте приложение Claude → <b>Code</b> → выберите <b>Local / «Этот компьютер»</b> → укажите папку <b>LAVRI Cut</b>. Вид приложения может немного отличаться.</p>
+<figure><img alt="Схема: приложение Claude, вкладка Code, режим Этот компьютер, папка LAVRI Cut" loading="lazy" src="img/step-2-claude-code.jpg"/><figcaption>Схема. Важно выбрать именно «Этот компьютер», а не облако: так агент работает с файлами в папке.</figcaption></figure>
+<h4>3. Вставьте промт установки</h4>
+<p>Скопируйте промт и отправьте его в этот чат. Агент проверит компьютер, поставит недостающие программы и соберёт демо-ролик. Если ему понадобится ваше подтверждение (например, пароль от компьютера в системном окне), он скажет, что сделать, одной фразой.</p>
+<div class="example"><pre>Ты — мой монтажный агент LAVRI Cut. Работай только в этой папке.
+1. Если здесь лежит zip-архив LAVRI Cut и папка ещё не распакована — распакуй его содержимое прямо в эту папку (без лишней вложенной папки). Прочитай CLAUDE.md и работай по нему.
+2. Подготовь всё сам: определи систему (Mac или Windows), проверь Node.js 20+, FFmpeg и Python 3. Чего нет — установи по подсказкам npm run doctor. Системную установку делай только после моего «да»; пароль я ввожу в окне системы, не в чате. Не обновляй систему и не ставь платные сервисы.
+3. Выполни npm install, затем npm run setup:python, затем npm run doctor.
+4. Запусти npm run demo. Покажи мне результат приёмки и открой демо-ролик (или скажи, где он лежит).
+Ничего не удаляй и не перезаписывай в папках input/ и assets/. Отвечай по-русски, коротко и без технических подробностей. Если нужно моё действие — назови одно конкретное действие и жди.</pre><button class="copy-example" type="button">Скопировать промт</button> <span aria-live="polite" class="copy-status"></span></div>
+<h4>4. Проверьте демо-ролик</h4>
+<p>Когда агент напишет <b>«✅ Готово и проверено»</b>, откройте демо-ролик со звуком. Это значит, что всё установлено: распознавание речи, монтаж, звуки и приёмка.</p>
+<figure><img alt="Схема: агент сообщает, что демо-ролик готов и проверен" loading="lazy" src="img/step-3-demo.jpg"/><figcaption>Схема. Первый запуск длится дольше: агент скачивает модель распознавания речи. Дальше всё быстрее.</figcaption></figure>
+<p class="note">Установка делается один раз. В следующий раз просто откройте папку LAVRI Cut в Claude Code — агент вспомнит правила и ваш стиль.</p></section>
+
+<section class="topic" id="first"><p class="label">ШАГ 5</p><h3>ПЕРВЫЙ РОЛИК</h3>
+<p>Создайте в папке <b>input</b> папку для ролика латиницей, например <b>reel-01</b>, и положите туда видео. Картинки и музыку для этого ролика — в <b>assets/reel-01</b>. Потом напишите агенту:</p>
+<div class="example"><pre>Я положила видео в input/reel-01. Смонтируй вертикальный рилс по правилам CLAUDE.md. Тема: … Для кого: … Призыв в конце: … Сначала покажи бриф. Дальше останавливайся там, где нужно моё решение.</pre><button class="copy-example" type="button">Скопировать промт</button> <span aria-live="polite" class="copy-status"></span></div>
+<p>Агент работает по шагам и останавливается в важных местах — на <b>стоп-кадрах</b>:</p>
+<ol><li><b>Бриф:</b> тема, хук, призыв, длина. Вы подтверждаете.</li>
+<li><b>Шум «до / после»:</b> 12 секунд, вы слушаете и выбираете.</li>
+<li><b>Таблица «оставить / вырезать»:</b> паузы, заминки, дубли. Решаете вы.</li>
+<li><b>Превью:</b> черновик с субтитрами, плашками и звуком. Правки словами или в редакторе.</li>
+<li><b>Финал:</b> только после вашего «да». Затем приёмка и готовый файл в папке <b>final</b>.</li></ol>
+<figure><img alt="Схема: таблица оставить или вырезать на первом ролике" loading="lazy" src="img/step-4-pervyj-rolik.jpg"/><figcaption>Схема. Агент предлагает — вы решаете. Исходное видео не меняется никогда.</figcaption></figure>
+<h4>Следующий ролик</h4><p>Новая папка в input (reel-02, reel-03…) и та же фраза. Ваш образ и выводы прошлых роликов агент применит сам.</p></section>
+
+<section class="topic" id="edits"><p class="label">ПРАВКИ</p><h3>КАК ПОПРОСИТЬ ПРАВКУ</h3>
+<p>Пишите обычными словами и называйте время в ролике. Агент сделает новую версию и не затрёт прошлую — к любой можно вернуться.</p>
+<div class="example"><pre>На 0:06 субтитры крупнее и выше.
+С 0:12 до 0:15 вставь мою картинку assets/reel-01/foto.jpg.
+Плашку «МОНТАЖ» убери, вместо неё счётчик 2/5.
+Музыка перекрывает голос на 0:20 — сделай тише.
+Верни фразу про цену целиком — склейка меняет смысл.</pre><button class="copy-example" type="button">Скопировать примеры</button> <span aria-live="polite" class="copy-status"></span></div>
+<p>Каждый раз агент предлагает выбор: <b>скажите правку словами — или откройте редактор и поправьте сами</b>.</p></section>
+
+<section class="topic" id="editor"><p class="label">РЕДАКТОР</p><h3>ПРАВКА ПАЛЬЦЕМ И МЫШКОЙ</h3>
+<p>Напишите агенту <b>«Открой редактор»</b>. Откроется окно с кадром ролика и всеми элементами: субтитры, плашки, счётчик, наклон горизонта, крупность спикера. Двигайте плашки прямо на кадре, меняйте текст, размер и время, выбирайте стиль субтитров в один клик. Кнопка <b>«Сохранить новой версией»</b> — и агент соберёт новое превью.</p>
+<div class="shots"><figure><img alt="Редактор LAVRI Cut на компьютере: кадр ролика и поля правки" loading="lazy" src="img/redaktor-kompyuter.jpg"/><figcaption>Редактор на компьютере: слева кадр, справа субтитры, плашки, счётчик.</figcaption></figure><figure><img alt="Редактор LAVRI Cut на телефоне" loading="lazy" src="img/redaktor-telefon.jpg"/><figcaption>В облачном варианте — то же окно на телефоне.</figcaption></figure></div>
+<figure><img alt="Темы оформления редактора" loading="lazy" src="img/redaktor-oformlenie.jpg"/><figcaption>Оформление редактора: мой образ, тёплое, тёмное, чёрно-белое.</figcaption></figure></section>
+
+<section class="topic" id="more"><p class="label">ВОЗМОЖНОСТИ</p><h3>ЗВУКИ, ШРИФТЫ, РАСПАКОВКА БЛОГА</h3>
+<h4>Звуковые эффекты</h4><p>48 звуков в папке assets/sfx: переходы, щелчки, удары, реакции, печать. Агент сам ставит звук на склейку и на появление плашки. Смысловые звуки — реакцию, удар на цифре, нарастание — он предлагает таблицей «время · звук · зачем» и ставит только после вашего «да».</p>
+<h4>Шрифты и образ</h4><p>Шрифты в папке fonts — с открытой или бесплатной коммерческой лицензией, их можно использовать в рекламе и на заказ. Попросите: «Давай настроим мой образ» и приложите 3–5 примеров. Агент подберёт цвета и пару шрифтов, покажет лист-образец и сохранит стиль.</p>
+<h4>Распаковка блога</h4><p>Без этого агент пишет хуки и подписи «как принято в нише». С распаковкой — словами вашей аудитории. Напишите: <b>«Распакуй меня»</b>. Агент пришлёт 2 промта для обычного чата Claude: «Профиль аудитории» и «Метод и табу», около 40 минут. Готовые документы верните агенту с фразой «Сохрани распаковку».</p>
+<h4>Обновления</h4><p>Новые приёмы выходят обновлениями: архив и промт обновления. Ваши ролики, образ и правила при обновлении сохраняются.</p></section>
+
+<section class="topic" id="trouble"><p class="label">ПОМОЩЬ</p><h3>ЕСЛИ НЕ ПОЛУЧИЛОСЬ</h3>
+<p>Сначала напишите агенту, на каком шаге остановились, и пришлите текст ошибки. Попросите объяснить простыми словами, что делать. Частые случаи:</p>
+<table class="trouble"><tr><th>Что видите</th><th>Что сделать</th></tr>
+<tr><td>Нет вкладки Code</td><td>Code доступен на платном тарифе (Pro, Max). Обновите приложение Claude.</td></tr>
+<tr><td>Агент говорит, что не может запускать команды или читать файлы</td><td>Выбран не тот режим. Code → <b>Local / «Этот компьютер»</b> → папка LAVRI Cut, новый чат.</td></tr>
+<tr><td>«FFmpeg не найден», «Python не найден»</td><td>Скажите агенту «Установи сам». Mac: через Homebrew, Windows: через winget. Пароль — в окне системы.</td></tr>
+<tr><td>Не скачивается модель распознавания речи</td><td>Проверьте интернет и повторите: «Выполни npm run setup:python ещё раз».</td></tr>
+<tr><td>Мало места на диске</td><td>Нужно около 5 ГБ. Удалите старые превью в папке previews (не в input!).</td></tr>
+<tr><td>Ролик без звука или звук отстаёт</td><td>«Проверь приёмку ролика» — агент покажет громкость и сдвиг звука и исправит.</td></tr>
+<tr><td>Закончились лимиты Claude</td><td>Работа не теряется: продолжите позже в той же папке, агент начнёт с последнего шага.</td></tr>
+<tr><td>Агент делает что-то не то</td><td>«Стоп. Верни, как было» — старые версии он не затирает.</td></tr></table>
+<div class="consultation-note"><h4>Не получилось за 2–3 попытки</h4><p>Напишите в поддержку — Telegram <a href="https://t.me/lavri_ai" rel="noopener noreferrer" target="_blank">@lavri_ai</a>. Пришлите шаг и текст ошибки (скриншот).</p></div></section>
+
+<section class="topic" id="cloud"><p class="label">ВАРИАНТ ДЛЯ ТЕЛЕФОНА</p><h3>ОБЛАКО И ТЕЛЕФОН</h3>
+<p>Этот гайд — про агента на компьютере: всё лежит в вашей папке, ничего не теряется. Если хотите монтировать <b>и с телефона, и с компьютера</b>, агента ставят в облако Claude: отдельный репозиторий, рабочая среда, домены и коннекторы.</p>
+<div class="paths"><div class="path on"><h4>Компьютер</h4><p>Сами по этому гайду. Ролики, звуки и шрифты лежат в папке на компьютере.</p></div><div class="path"><h4>Облако + телефон</h4><p>Настройка вместе на консультации: монтаж с любого устройства, редактор на телефоне.</p></div></div>
+<p>Хотите облачный вариант — напишите <a href="https://t.me/lavri_ai" rel="noopener noreferrer" target="_blank">@lavri_ai</a>.</p></section>
+
+<section class="topic" id="get"><p class="label">ДОСТУП</p><h3>ПОЛУЧИТЬ АГЕНТА</h3>
+<p>Архив LAVRI Cut выдаётся через бот. После оплаты бот пришлёт архив и ссылку на этот гайд. Архив — именной экземпляр авторской методики LAVRI: передавать и перепродавать его третьим лицам нельзя.</p>
+<a class="cta" href="https://t.me/pay_lavri_ai_bot">Получить архив LAVRI Cut →</a></section>
+
+</article></div></main><footer class="wrap site-footer"><p class="footer-brand">LAVRI LOOK</p><nav aria-label="Связаться с LAVRI LOOK" class="footer-contacts"><a href="https://t.me/lavri_ai" rel="noopener noreferrer" target="_blank">Поддержка ↗</a><a href="https://t.me/lavri_ai_look" rel="noopener noreferrer" target="_blank">Telegram-канал ↗</a><a href="https://www.instagram.com/lavri_ai" rel="noopener noreferrer" target="_blank">Instagram ↗</a></nav><p><a href="../../index.html">← Библиотека</a></p></footer><script src="../../assets/guide.js"></script><nav aria-label="Наверх и к началу текущего раздела" class="page-shortcuts"><a aria-label="В начало страницы" data-scroll="top" href="#page-top" title="В начало страницы"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m6 17 6-6 6 6M6 10l6-6 6 6"></path></svg></a><a aria-label="В начало раздела" data-scroll="section" href="#page-top" title="В начало раздела"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"></path></svg></a></nav><script src="../../assets/reading-navigation.js?v=nav-retry-6"></script></body></html>
