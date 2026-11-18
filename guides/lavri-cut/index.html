@@ -68,6 +68,9 @@ a{color:inherit;text-underline-offset:.22em}
 :focus-visible{outline:3px solid #607d51;outline-offset:3px}
 .qa details{margin:.6rem 0;background:var(--white);border:1px solid var(--rule);border-radius:1rem;padding:.2rem 1.1rem}.qa summary{cursor:pointer;font-weight:600;padding:.8rem 0;list-style:none}.qa summary::-webkit-details-marker{display:none}.qa summary::before{content:"＋";color:var(--accent);margin-right:.6rem}.qa details[open] summary::before{content:"−"}.qa details>div{padding:0 0 1rem}
 .cta-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.6rem 0;padding:1rem 1.2rem;background:var(--wash);border-radius:1rem}
+.tabs-buy{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--rule)}
+.cmp{table-layout:fixed}.cmp th,.cmp td{overflow-wrap:normal;word-break:normal;hyphens:auto;-webkit-hyphens:auto}
+@media(max-width:700px){.tabs a{font-size:.82rem;padding:.35rem .75rem;min-height:36px}.cmp th,.cmp td{padding:.6rem .5rem;font-size:.82rem}.cmp td:first-child{width:28%!important}}
 .page{display:none}.page.on{display:block}
 @media(max-width:700px){.choose,.two,.feat,.offer{grid-template-columns:1fr}.cmp{font-size:.88rem}.cmp td:first-child{width:auto}.help,.help tbody,.help tr,.help td{display:block;width:auto!important}.help td:first-child{border-bottom:0;padding-bottom:0}}
 @media print{.tabs,.copy,.next{display:none}.page{display:block!important}}
@@ -78,6 +81,7 @@ a{color:inherit;text-underline-offset:.22em}
 <div class="brand"><a href="#home">LAVRI LOOK · LAVRI Cut</a><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Поддержка ↗</a></div>
 <nav aria-label="Содержание" class="tabs">
 <a data-page="home" href="#home">Что внутри агента</a>
+<a data-anchor="where" href="#where">Где работает агент</a>
 <a class="buy" data-page="pc" href="#pc">Установка на компьютер</a>
 <a class="buy" data-page="cloud" href="#cloud">Установка в облако</a>
 <a data-page="first" href="#first">Первый ролик</a>
@@ -86,8 +90,10 @@ a{color:inherit;text-underline-offset:.22em}
 <a data-page="comp" href="#comp">Анализ конкурентов</a>
 <a data-page="edits" href="#edits">Как попросить правку</a>
 <a data-page="help" href="#help">Если не получилось</a>
+</nav>
+<nav aria-label="Доступ" class="tabs tabs-buy">
 <a class="buy" data-page="get" href="#get">Получить агента</a>
-<a data-page="update" href="#update">Обновить агента</a>
+<a class="buy" data-page="update" href="#update">Обновить агента</a>
 </nav>
 </header>
 <main class="wrap">
@@ -107,16 +113,17 @@ a{color:inherit;text-underline-offset:.22em}
 <div><b>Тройная приёмка</b>Ролик не считается готовым, пока агент не проверит: безопасная зона и раскладка без наложений, звук совпадает с картинкой (без сдвига), нет чёрных и зависших кадров, громкость под Reels.</div>
 </div>
 <p class="note">Агент — не просто программа, а ваш сотрудник: учится на ваших роликах, запоминает правки, может освоить новый приём и сам разобрать свою ошибку. <a href="#teach">Как с ним говорить</a>.</p>
-<h2>Где будет работать агент</h2>
+<h2 id="where">Где будет работать агент</h2>
 <div class="choose">
 <a class="choice" href="#pc"><span class="tag">Проще · сами за 30 минут</span><h3>На компьютере</h3>
 <ul><li>Агент живёт в папке на вашем Mac или Windows</li><li>Видео, звуки, шрифты, готовые ролики — в папке, никуда не пропадают</li><li>Не нужны GitHub и настройки среды</li><li>Работа только с компьютера</li></ul><span class="btn">Установка на компьютер →</span></a>
-<a class="choice" href="#cloud"><span class="tag">С телефона и компьютера</span><h3>В облаке</h3>
+<a class="choice" href="#cloud"><span class="tag"><b>Компьютер + телефон</b></span><h3>В облаке</h3>
 <ul><li>Монтаж с любого устройства, в том числе с телефона</li><li>Редактор открывается и на телефоне</li><li>Агент и его память — в вашем личном репозитории GitHub</li><li>Настройка сложнее: GitHub, среда, домены, коннекторы</li></ul><span class="btn">Установка в облако →</span></a>
 </div>
 <h2>В чём разница</h2>
 <table class="cmp">
-<thead><tr><th>Что</th><th>Компьютер</th><th>Облако</th></tr></thead>
+<colgroup><col style="width:28%"/><col style="width:32%"/><col style="width:40%"/></colgroup>
+<thead><tr><th>Что</th><th>Компьютер</th><th>Облако + телефон</th></tr></thead>
 <tbody>
 <tr><td>Где работает агент</td><td>Папка на вашем компьютере</td><td>Виртуальный компьютер Claude + ваш личный репозиторий GitHub</td></tr>
 <tr><td>Код агента, правила, навыки</td><td>В папке</td><td>В репозитории GitHub</td></tr>
@@ -452,7 +459,7 @@ python3 -m venv .venv &amp;&amp; \
     var h=(location.hash||'#home').slice(1), page='home', target=null;
     if(pages.indexOf(h)>=0){page=h}else{var el=document.getElementById(h);if(el){var p=el.closest('.page');if(p){page=p.id.slice(2);target=el}}}
     pages.forEach(function(id){document.getElementById('p-'+id).classList.toggle('on',id===page)});
-    document.querySelectorAll('.tabs a').forEach(function(a){if(a.dataset.page===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    document.querySelectorAll('.tabs a[data-page]').forEach(function(a){if(a.dataset.page===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
     if(target){target.scrollIntoView()}else{window.scrollTo(0,0)}
   }
   window.addEventListener('hashchange',show);show();
