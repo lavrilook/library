@@ -84,6 +84,7 @@ a{color:inherit;text-underline-offset:.22em}
 <a data-page="edits" href="#edits">Как попросить правку</a>
 <a data-page="help" href="#help">Если не получилось</a>
 <a class="buy" data-page="get" href="#get">Получить агента</a>
+<a data-page="update" href="#update">Обновить агента</a>
 </nav>
 </header>
 <main class="wrap">
@@ -173,7 +174,7 @@ a{color:inherit;text-underline-offset:.22em}
 <ol start="3"><li><b>Name:</b> <code>Montage</code>. <b>Network access:</b> Limited.</li><li>Поставьте галочку <b>Allow package managers</b> — без неё среда не заработает (ошибка 403).</li><li><b>Allowed domains</b> — список ниже.</li></ol>
 <figure><img alt="Настройки среды: имя, Limited, домены, Allow package managers" loading="lazy" src="img/c3-settings.jpg"/></figure></div>
 <div class="step" id="cl-domains"><span class="num">Шаг 3 · домены</span><h3>Allowed domains</h3>
-<p>Вставьте список <b>целиком</b>. Если среда уже была — <b>удалите старый список полностью</b> и вставьте этот. Звёздочку <code>*.</code> не убирайте — без неё не скачиваются ролики из Instagram, YouTube и TikTok.</p>
+<p>Вставьте список <b>целиком</b>. Звёздочку <code>*.</code> не убирайте — без неё не скачиваются ролики из Instagram, YouTube и TikTok.</p>
 <div class="copybox"><div class="head">34 домена<button class="copy" type="button">Скопировать</button></div><pre>huggingface.co
 *.huggingface.co
 *.hf.co
@@ -209,7 +210,6 @@ tiktok.com
 *.tiktokcdn.com
 *.tiktokv.com</pre></div>
 <p class="note">Зачем: распознавание речи (huggingface), Google и Яндекс Диск, Higgsfield — скачать генерации (cloudfront) и загрузить свои кадры (upload), стоки, музыка и звуки, шрифты, Pinterest, ролики конкурентов.</p>
-<figure><img alt="Как заменить список доменов" loading="lazy" src="img/c3-domains-replace.jpg"/><figcaption>Если среда уже есть: шестерёнка → Network access → выделить всё старое и удалить → вставить новый список → Save changes.</figcaption></figure>
 <h3>Скрипт установки</h3>
 <p>Прокрутите до <b>Setup script</b> и вставьте:</p>
 <div class="copybox"><div class="head">Setup script<button class="copy" type="button">Скопировать</button></div><pre>#!/bin/bash
@@ -333,14 +333,33 @@ python3 -m venv .venv &amp;&amp; \
 <div class="card"><span class="tag">Сами по инструкции</span><h3>Архив LAVRI Cut</h3><div class="price">2500р.</div><ul><li>Монтажный агент целиком: правила, навыки, редактор, 48 звуков, шрифты</li><li>Установка на компьютер или в облако по этой инструкции</li><li>Именной экземпляр</li></ul><a class="btn" href="https://t.me/pay_lavri_ai_bot" rel="noopener" target="_blank">Получить архив →</a></div>
 <div class="card"><span class="tag">Вместе со мной</span><h3>Консультация</h3><p>Настроим агента вместе на созвоне: облако с телефоном под ключ, домены, коннекторы, первый ролик.</p><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 </div>
+<p class="note">Агент уже есть? — <a href="#update">обновите его до новой версии</a>.</p>
 <p class="note">Архив — именной экземпляр авторской методики LAVRI: передавать, копировать и перепродавать его третьим лицам нельзя.<br/>В архиве — только авторский код и методика LAVRI. Агент работает на базе открытых программ (<a href="https://www.remotion.dev/license" rel="noopener" target="_blank">Remotion</a>, FFmpeg, распознавание речи): они в архив не входят — при установке вы скачиваете их сами с официальных сайтов, по их лицензиям. Remotion бесплатен для частных лиц и компаний до 3 сотрудников; компании больше — оформляют лицензию Remotion сами.</p>
+</section>
+
+<section class="page" id="p-update">
+<div class="hero"><p class="kicker">Для тех, у кого агент уже есть</p><h1>Обновить агента</h1><p class="lead">Новые приёмы выходят обновлениями. Ваши ролики, образ, правила и уроки при обновлении сохраняются — агент встраивает только новое.</p></div>
+<div class="step" id="up-1"><span class="num">Шаг 1</span><h3>Получите архив обновления</h3>
+<p>Напишите мне, с какой версии обновляетесь (если не помните — имя вашего агента или репозитория). Пришлю именной архив обновления.</p>
+<a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Получить архив для обновления →</a></div>
+<div class="step" id="up-2"><span class="num">Шаг 2 · только облако</span><h3>Обновите домены</h3>
+<p>Шестерёнка у вашей среды → <b>Network access</b> → выделите весь старый список и удалите → вставьте новый <a href="#cl-domains">список доменов</a> целиком → <b>Save changes</b>. Проверьте галочку <b>Allow package managers</b>.</p>
+<figure><img alt="Как заменить список доменов: удалить старый, вставить новый, Save changes" loading="lazy" src="img/c3-domains-replace.jpg"/></figure>
+<p>На компьютере этот шаг не нужен.</p></div>
+<div class="step" id="up-3"><span class="num">Шаг 3</span><h3>Откройте агента</h3>
+<ul><li><b>Компьютер:</b> Claude → Code → «Этот компьютер» → папка вашего агента. Положите архив обновления в эту папку.</li><li><b>Облако:</b> <b>новая</b> сессия → ваша среда (Montage) и ваш репозиторий (XXX). Архив прикрепите к сообщению.</li></ul></div>
+<div class="step" id="up-4"><span class="num">Шаг 4</span><h3>Отправьте промт обновления</h3>
+<div class="copybox"><div class="head">Промт обновления<button class="copy" type="button">Скопировать</button></div><pre>Обнови себя до новой версии из архива обновления (содержимое папки внутри архива) строго по файлу UPDATE.md. Сначала сделай точку возврата: если есть git — коммит и тег, если нет — скопируй всю папку целиком в «копия до обновления». Ничего из моих наработок не удаляй: ролики, бриф, образ, уроки, мои правила и мои правки в коде сохрани. Встрой только то, чего у меня ещё нет. Обязательно перенеси звуковые эффекты из assets/sfx/ и новые шрифты из fonts/. Затем по файлу CLEANUP.md убери следы прошлых версий — только то, что пришло с установкой или обновлением, мои папки не трогай. Подключения (коннекторы, ключи, настройки среды) не трогай. В конце запусти npm run doctor, проверь мои начатые ролики и npm run demo, сохрани изменения (в облаке — commit и push) и коротко расскажи, что нового. Если что-то сломается — верни всё как было.</pre></div>
+<p>Готово, когда агент написал <b>«✅ Готово и проверено»</b> и рассказал, что нового.</p></div>
+<div class="step"><span class="num">Если не получилось</span><h3>Вернуть, как было</h3><p>Напишите «Верни всё как было до обновления» — агент восстановит точку возврата. Пришлите мне скриншот ошибки в <a href="https://t.me/lavri_ai" rel="noopener" target="_blank">@lavri_ai</a>.</p></div>
+<div class="next"><a class="btn ghost" href="#get">← Получить агента</a><a class="btn ghost" href="#home">К началу</a></div>
 </section>
 
 </main>
 <footer class="wrap"><span>LAVRI LOOK · авторская методика LAVRI</span><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Telegram @lavri_ai</a></footer>
 <script>
 (function(){
-  var pages=['home','pc','cloud','first','editor','more','edits','help','get'];
+  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update'];
   function show(){
     var h=(location.hash||'#home').slice(1), page='home', target=null;
     if(pages.indexOf(h)>=0){page=h}else{var el=document.getElementById(h);if(el){var p=el.closest('.page');if(p){page=p.id.slice(2);target=el}}}
