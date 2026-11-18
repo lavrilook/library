@@ -81,6 +81,7 @@ a{color:inherit;text-underline-offset:.22em}
 <a data-page="first" href="#first">Первый ролик</a>
 <a data-page="editor" href="#editor">Редактор</a>
 <a data-page="more" href="#more">Звуки, шрифты, распаковка</a>
+<a data-page="comp" href="#comp">Конкуренты</a>
 <a data-page="edits" href="#edits">Как попросить правку</a>
 <a data-page="help" href="#help">Если не получилось</a>
 <a class="buy" data-page="get" href="#get">Получить агента</a>
@@ -156,7 +157,7 @@ a{color:inherit;text-underline-offset:.22em}
 <section class="page" id="p-cloud">
 <div class="hero"><p class="kicker">Компьютер + телефон</p><h1>Установка в облако</h1>
 <p class="lead">Агент живёт в вашем личном репозитории GitHub и работает в облаке Claude — монтаж с телефона и с компьютера. Настройка сложнее: если не получится, настроим вместе на консультации.</p></div>
-<nav aria-label="Шаги" class="toc"><a href="#cl-0">Подготовка</a><a href="#cl-1">1. Репозиторий</a><a href="#cl-2">2. GitHub → Claude</a><a href="#cl-3">3. Среда</a><a href="#cl-domains">Домены</a><a href="#cl-4">4. Коннекторы</a><a href="#cl-5">5. Архив</a><a href="#cl-6">6. Демо</a><a href="#cl-7">7. Образ</a><a href="#cl-8">8. Проверка</a></nav>
+<nav aria-label="Шаги" class="toc"><a href="#cl-0">Подготовка</a><a href="#cl-1">1. Репозиторий</a><a href="#cl-2">2. GitHub → Claude</a><a href="#cl-3">3. Среда</a><a href="#cl-domains">Домены</a><a href="#cl-4">4. Коннекторы</a><a href="#cl-5">5. Архив</a><a href="#cl-6">6. Демо</a><a href="#cl-7">7. Образ</a><a href="#cl-8">8. Проверка</a><a href="#cl-9">9. Новая сессия</a></nav>
 <div class="step" id="cl-0"><span class="num">Перед началом</span><h3>Подготовка</h3>
 <ul><li>Приложение <b>Claude</b> на компьютере и телефоне — <a href="https://claude.com/download" rel="noopener" target="_blank">claude.com/download</a>.</li><li>Подписка <b>Claude Pro</b> или выше (в ней есть Claude Code).</li><li>Аккаунт <b>GitHub</b> — <a href="https://github.com/signup" rel="noopener" target="_blank">github.com/signup</a>.</li><li><b>Google Диск</b> на телефоне — загружать видео для монтажа.</li><li>Аккаунт <b>Higgsfield</b> — по желанию, для генераций.</li><li><b>Архив LAVRI Cut</b> — <a href="#get">получить</a>.</li></ul>
 <p class="note">Дальше в инструкции: <b>XXX</b> — название вашего репозитория (латиницей, например <code>anna-montage</code>), <b>Montage</b> — название вашей облачной среды. Можно назвать по-своему, главное — одинаково во всех шагах.</p></div>
@@ -246,6 +247,14 @@ python3 -m venv .venv &amp;&amp; \
 <div class="copybox"><div class="head">Higgsfield<button class="copy" type="button">Скопировать</button></div><pre>Загрузи инструменты Higgsfield, проверь баланс и покажи мою последнюю генерацию — например, фото.</pre></div>
 <p>Агент назвал ролик, скачал его и показал генерацию — всё работает.</p>
 <p class="warn"><b>Облако — временное рабочее место.</b> Свои исходники держите на Google Диске, готовый ролик скачивайте сразу: агент присылает его файлом в чат.</p></div>
+<div class="step" id="cl-9"><span class="num">Шаг 9</span><h3>Как работать дальше: новая сессия на каждую задачу</h3>
+<p>Среда <b>Montage</b> и репозиторий <b>XXX</b> настраиваются один раз. Дальше каждая задача — <b>новая сессия</b> в той же среде и том же репозитории: агент тот же, его память и ваш образ — на месте.</p>
+<ol><li>Claude → <b>Code</b> → <b>+ New</b>.</li><li>Под полем ввода: среда → <b>Montage</b>, репозиторий → <b>XXX</b>.</li><li>Назовите сессию понятно: первая — «Монтажный агент», дальше — «Reels: тема ролика», «Конкуренты», «Обложки».</li></ol>
+<figure><img alt="Новая сессия: Code → New" loading="lazy" src="img/c3-new.jpg"/></figure>
+<figure><img alt="В новой сессии выбрать свою среду" loading="lazy" src="img/c5-env.jpg"/></figure>
+<figure><img alt="В новой сессии выбрать свой репозиторий" loading="lazy" src="img/c5-repo.jpg"/></figure>
+<p class="note">Новая сессия нужна и после любых изменений настроек среды (домены, ключ Pixabay, коннекторы) — старая их не увидит. Один ролик лучше вести в одной сессии от начала до финала.</p>
+<p class="note"><b>На компьютере</b> так же: новый чат в Code → «Этот компьютер» → та же папка агента.</p></div>
 <div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#first">Первый ролик →</a></div>
 </section>
 
@@ -293,12 +302,28 @@ python3 -m venv .venv &amp;&amp; \
 <p><a href="https://pixabay.com" rel="noopener" target="_blank">Pixabay</a> — бесплатная библиотека фото, видео и музыки: можно использовать в роликах и рекламе без указания автора. Агент сам найдёт подходящие вставки, покажет лист с номерами и скачает выбранные.</p>
 <ol><li><a href="https://pixabay.com" rel="noopener" target="_blank">pixabay.com</a> → <b>Join</b> → вход через Google.</li><li><a href="https://pixabay.com/api/docs/" rel="noopener" target="_blank">pixabay.com/api/docs</a> → раздел <b>Parameters</b> → строка <b>key</b> → скопируйте ваш ключ.</li></ol>
 <h3>На компьютере</h3><p>Напишите агенту: <b>«Сохрани мой ключ Pixabay в файл .env»</b> и вставьте ключ. Файл остаётся только у вас в папке.</p>
-<h3>В облаке</h3><p>Шестерёнка у вашей среды → <b>Environment variables</b> → <code>PIXABAY_API_KEY=ваш_ключ</code> → <b>Save changes</b> → новая сессия. В чат ключ не присылайте.</p>
+<h3>В облаке</h3><p>Шестерёнка у вашей среды → <b>Environment variables</b> → <code>PIXABAY_API_KEY=ваш_ключ</code> → <b>Save changes</b> → откройте <a href="#cl-9">новую сессию</a> (в старой ключа не будет). В чат ключ не присылайте.</p>
 <figure><img alt="Ключ Pixabay в переменных облачной среды" loading="lazy" src="img/cx-pixabay-key.jpg"/></figure>
 <div class="copybox"><div class="head">Проверка<button class="copy" type="button">Скопировать</button></div><pre>Найди вертикальное видео «кофе утро» на Pixabay.</pre></div>
 <figure><img alt="Агент нашёл видео на Pixabay" loading="lazy" src="img/cx-pixabay-test.jpg"/></figure></div>
 <div class="step"><span class="num">Обновления</span><h3>Новые приёмы</h3><p>Выходят обновлениями: архив и промт обновления. Ваши ролики, образ и правила сохраняются.</p></div>
-<div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#edits">Как попросить правку →</a></div>
+<div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#comp">Конкуренты →</a></div>
+</section>
+
+<section class="page" id="p-comp">
+<div class="hero"><p class="kicker">Идеи для роликов</p><h1>Конкуренты и адаптация под себя</h1><p class="lead">Агент разбирает чужие Reels — хук, приёмы, почему залетел — и предлагает идеи и сценарий под вас. Чужой ролик — только для разбора, не для публикации.</p></div>
+<div class="step"><span class="num">Один Reels</span><h3>Разбор по ссылке</h3>
+<p>Скопируйте ссылку на Reels, YouTube Shorts или TikTok («Поделиться → Копировать ссылку»).</p>
+<div class="copybox"><div class="head">Разбор Reels<button class="copy" type="button">Скопировать</button></div><pre>Скачай и разбери этот ролик по навыку reels-analysis: ССЫЛКА
+Нужна таблица с тайм-кодами (что в кадре, текст, звук), хук и почему ролик залетел. Затем адаптируй под меня с учётом моей распаковки: 3 варианта хука и сценарий «по мотивам» со списком съёмки.</pre></div></div>
+<div class="step"><span class="num">Несколько профилей</span><h3>Что залетело у конкурентов</h3>
+<div class="copybox"><div class="head">Анализ конкурентов<button class="copy" type="button">Скопировать</button></div><pre>Вот мои конкуренты: ССЫЛКИ НА ПРОФИЛИ (YouTube, TikTok) и ссылки на свежие Reels из Instagram.
+Найди их ролики за последние 14 дней, покажи топ-3 по просмотрам и во сколько раз они выше обычных у автора. Разбери, почему залетели, и предложи 3 идеи роликов под меня.</pre></div>
+<p class="note">Instagram без входа не показывает список роликов профиля — пришлите ссылки на свежие Reels или подключите Metricool (раздел «Конкуренты» в нём) — тогда агент возьмёт их оттуда. Свой пароль от Instagram агенту не давайте.</p></div>
+<div class="step"><span class="num">Регулярно</span><h3>Сводка раз в неделю</h3>
+<div class="copybox"><div class="head">Сводка<button class="copy" type="button">Скопировать</button></div><pre>Сохрани список моих конкурентов. Каждую неделю делай сводку: что у них залетело за 7 дней, почему, и 3 идеи для меня.</pre></div>
+<p class="note">В облаке для этого нужны домены соцсетей со звёздочками (они уже в списке). Сводку удобно вести в отдельной сессии «Конкуренты».</p></div>
+<div class="next"><a class="btn ghost" href="#more">← Звуки, шрифты</a><a class="btn" href="#edits">Как попросить правку →</a></div>
 </section>
 
 <section class="page" id="p-edits">
@@ -311,7 +336,7 @@ python3 -m venv .venv &amp;&amp; \
 Верни фразу про цену целиком — склейка меняет смысл.</pre></div>
 <p>Каждый раз агент предлагает выбор: сказать правку словами — или <a href="#editor">открыть редактор</a> и поправить самим.</p></div>
 <div class="step"><span class="num">Если что-то не так</span><h3>Вернуть, как было</h3><p>«Стоп. Верни, как было» — старые версии агент не затирает. Исходное видео не меняется никогда.</p></div>
-<div class="next"><a class="btn ghost" href="#more">← Звуки, шрифты</a><a class="btn" href="#help">Если не получилось →</a></div>
+<div class="next"><a class="btn ghost" href="#comp">← Конкуренты</a><a class="btn" href="#help">Если не получилось →</a></div>
 </section>
 
 <section class="page" id="p-help">
@@ -370,7 +395,7 @@ python3 -m venv .venv &amp;&amp; \
 <footer class="wrap"><span>LAVRI LOOK · авторская методика LAVRI</span><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Telegram @lavri_ai</a></footer>
 <script>
 (function(){
-  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update'];
+  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update','comp'];
   function show(){
     var h=(location.hash||'#home').slice(1), page='home', target=null;
     if(pages.indexOf(h)>=0){page=h}else{var el=document.getElementById(h);if(el){var p=el.closest('.page');if(p){page=p.id.slice(2);target=el}}}
