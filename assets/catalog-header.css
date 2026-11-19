@@ -1,7 +1,7 @@
 .catalog-topbar{position:sticky;top:0;z-index:100;background:#f6f4ed;border-bottom:1px solid #d9d6cd}.catalog-topbar-inner{display:flex;align-items:center;justify-content:space-between;min-height:52px;padding:0 clamp(22px,4vw,72px)}.catalog-brand{font:500 12px/1.4 system-ui,sans-serif;letter-spacing:.12em;color:#b78073;text-decoration:none}.catalog-contact-link{display:inline-flex;align-items:center;min-height:44px;font:13px/1.4 system-ui,sans-serif;color:#5b5c58;text-decoration:none}.catalog-contact-link:hover{text-decoration:underline}.hero h1{text-align:center}header.hero{margin-top:0}#contacts{scroll-margin-top:68px}.category{scroll-margin-top:64px}.category>.cat-header{top:52px}@media(max-width:650px){.catalog-topbar-inner{padding:0 16px}.catalog-brand{font-size:11px}.catalog-contact-link{font-size:12px}}
 .catalog-topbar{position:static!important;top:auto!important}#contacts{scroll-margin-top:12px}.category>.cat-header{position:static!important;top:auto!important}
 
-body.reading-scrolled .category>.cat-header{position:sticky!important;top:0!important}body:not(.reading-scrolled) .category>.cat-header{position:static!important;top:auto!important}
+.category>.cat-header{position:sticky!important;top:0!important}
 
 /* Blend section headings into the cool page background. */
 .catalog-topbar{background:#eef1f2;border-bottom-color:rgba(146,157,154,.18)}.category>.cat-header{background:linear-gradient(180deg,rgba(238,241,242,0) 0%,rgba(238,241,242,.98) 18%,rgba(238,241,242,.98) 82%,rgba(238,241,242,0) 100%);border-bottom-color:rgba(146,157,154,.25)}

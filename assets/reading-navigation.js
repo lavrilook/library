@@ -1,1 +1,44 @@
-(()=>{const nav=document.querySelector('.page-shortcuts');if(!nav)return;const top=nav.querySelector('[data-scroll="top"]');const section=nav.querySelector('[data-scroll="section"]');const candidates=[...document.querySelectorAll('main > section.category, main > section, .reading-content > .topic, main > article > section.example')];const sections=[...new Set(candidates)];sections.forEach((el,i)=>{if(!el.id)el.id='reading-section-'+(i+1)});function current(){let result=null;for(const el of sections){if(el.getBoundingClientRect().top<=110)result=el;else break}return result||sections[0]||document.querySelector('main')}function update(){document.body.classList.toggle('reading-scrolled',window.scrollY>80);const el=current();if(el){if(!el.id)el.id='material-start';section.href='#'+el.id}}let queued=false;addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(()=>{update();queued=false})}},{passive:true});addEventListener('resize',update);let topRun=0;function cancelTop(){topRun++}addEventListener('pointerdown',event=>{if(!event.target.closest('[data-scroll="top"]'))cancelTop()},{passive:true});addEventListener('popstate',cancelTop);addEventListener('touchmove',cancelTop,{passive:true});addEventListener('wheel',cancelTop,{passive:true});addEventListener('keydown',cancelTop);top.addEventListener('click',event=>{event.preventDefault();const run=++topRun;const marker=document.getElementById('page-top');const root=document.documentElement;root.style.scrollBehavior='auto';document.body.style.scrollBehavior='auto';try{history.replaceState(history.state,'',location.pathname+location.search+'#page-top')}catch{}function move(){if(run!==topRun)return;document.body.classList.remove('reading-scrolled');if(marker)marker.scrollIntoView({block:'start',behavior:'auto'});window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;document.body.scrollTop=0;update()}move();[60,180,400].forEach(delay=>setTimeout(move,delay));setTimeout(()=>{if(run!==topRun)return;const hidden=marker&&marker.getBoundingClientRect().top < -4;if(window.scrollY>4||hidden){const url=new URL(location.href);url.searchParams.set('_top',Date.now().toString(36));url.hash='page-top';location.replace(url.href)}},750)});update()})();
+(() => {
+  const nav = document.querySelector('.page-shortcuts');
+  if (!nav) return;
+  const top = nav.querySelector('[data-scroll="top"]');
+  const section = nav.querySelector('[data-scroll="section"]');
+  const sections = [...new Set(document.querySelectorAll(
+    'main > section.category, main > section, .reading-content > .topic, main > article > section.example'
+  ))];
+  sections.forEach((el, i) => {
+    if (!el.id) el.id = 'reading-section-' + (i + 1);
+  });
+
+  function update() {
+    let current = sections[0];
+    for (const el of sections) {
+      if (el.getBoundingClientRect().top > 110) break;
+      current = el;
+    }
+    if (section && current) section.href = '#' + current.id;
+  }
+
+  let queued = false;
+  addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      update();
+      queued = false;
+    });
+  }, { passive: true });
+  addEventListener('resize', update);
+  addEventListener('pageshow', update);
+
+  if (top) top.addEventListener('click', event => {
+    event.preventDefault();
+    // Keep a single document scroll; delayed retries must not fight a new gesture.
+    try {
+      history.replaceState(history.state, '', location.pathname + location.search + '#page-top');
+    } catch {}
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    update();
+  });
+  update();
+})();
