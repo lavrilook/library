@@ -68,9 +68,10 @@ a{color:inherit;text-underline-offset:.22em}
 :focus-visible{outline:3px solid #607d51;outline-offset:3px}
 .qa details{margin:.6rem 0;background:var(--white);border:1px solid var(--rule);border-radius:1rem;padding:.2rem 1.1rem}.qa summary{cursor:pointer;font-weight:600;padding:.8rem 0;list-style:none}.qa summary::-webkit-details-marker{display:none}.qa summary::before{content:"＋";color:var(--accent);margin-right:.6rem}.qa details[open] summary::before{content:"−"}.qa details>div{padding:0 0 1rem}
 .cta-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.6rem 0;padding:1rem 1.2rem;background:var(--wash);border-radius:1rem}
+.tabs-rows .tabs{margin:.45rem 0 0}.tabs-rows .tabs:first-child{margin-top:1rem}
 .tabs-buy{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--rule)}
 .cmp{table-layout:fixed}.cmp th,.cmp td{overflow-wrap:normal;word-break:normal;hyphens:auto;-webkit-hyphens:auto}
-@media(max-width:700px){.tabs a{font-size:.82rem;padding:.35rem .75rem;min-height:36px}.cmp th,.cmp td{padding:.6rem .5rem;font-size:.82rem}.cmp td:first-child{width:28%!important}}
+@media(max-width:700px){.tabs{gap:.3rem}.tabs a{font-size:.8rem;padding:.35rem .6rem;min-height:36px}.cmp th,.cmp td{padding:.6rem .5rem;font-size:.82rem}.cmp td:first-child{width:28%!important}}
 .page{display:none}.page.on{display:block}
 @media(max-width:700px){.choose,.two,.feat,.offer{grid-template-columns:1fr}.cmp{font-size:.88rem}.cmp td:first-child{width:auto}.help,.help tbody,.help tr,.help td{display:block;width:auto!important}.help td:first-child{border-bottom:0;padding-bottom:0}}
 @media print{.tabs,.copy,.next{display:none}.page{display:block!important}}
@@ -79,17 +80,12 @@ a{color:inherit;text-underline-offset:.22em}
 <body>
 <header class="wrap">
 <div class="brand"><a href="#home">LAVRI LOOK · LAVRI Cut</a><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Поддержка ↗</a></div>
-<nav aria-label="Содержание" class="tabs">
-<a data-page="home" href="#home">Что внутри агента</a>
-<a data-anchor="where" href="#where">Где работает агент</a>
-<a class="buy" data-page="pc" href="#pc">Установка на компьютер</a>
-<a class="buy" data-page="cloud" href="#cloud">Установка в облако</a>
-<a data-page="first" href="#first">Первый ролик</a>
-<a data-page="editor" href="#editor">Редактор</a>
-<a data-page="more" href="#more">Звуки, шрифты, распаковка</a>
-<a data-page="comp" href="#comp">Анализ конкурентов</a>
-<a data-page="edits" href="#edits">Как попросить правку</a>
-<a data-page="help" href="#help">Если не получилось</a>
+<nav aria-label="Содержание" class="tabs-rows">
+<div class="tabs"><a data-page="home" href="#home">Что внутри агента</a><a data-anchor="where" href="#where">Где работает агент</a></div>
+<div class="tabs"><a class="buy" data-page="pc" href="#pc">Установка на компьютер</a><a class="buy" data-page="cloud" href="#cloud">Установка в облако</a></div>
+<div class="tabs"><a data-page="first" href="#first">Первый ролик</a><a data-page="editor" href="#editor">Редактор</a><a data-page="more" href="#more">Звуки и шрифты</a></div>
+<div class="tabs"><a data-page="unpack" href="#unpack">Распаковка: аудитория и экспертность</a></div>
+<div class="tabs"><a data-page="comp" href="#comp">Анализ конкурентов</a><a data-page="edits" href="#edits">Как просить правку</a><a data-page="help" href="#help">Частые вопросы</a></div>
 </nav>
 <nav aria-label="Доступ" class="tabs tabs-buy">
 <a class="buy" data-page="get" href="#get">Получить агента</a>
@@ -293,22 +289,14 @@ python3 -m venv .venv &amp;&amp; \
 <p>Редактор — часть вашего агента, его можно менять словами. Опишите, что хотите видеть: какие поля и разделы, в каком порядке, как назвать, какие убрать, какие цвета и размер кнопок. Агент перестроит редактор и покажет, как стало.</p>
 <div class="copybox"><div class="head">Пример<button class="copy" type="button">Скопировать</button></div><pre>Хочу, чтобы в редакторе первым шёл раздел «Субтитры», потом «Плашки». Раздел «Счётчик» убери — я им не пользуюсь. Добавь поле «цвет подложки субтитров». Кнопки сделай крупнее, чтобы удобно нажимать с телефона. Покажи, как стало.</pre></div>
 <p class="note">Новые приёмы, которые вы добавляете в агента (новый вид субтитров, плашка, эффект), агент сам добавляет и в редактор.</p></div>
-<div class="next"><a class="btn ghost" href="#first">← Первый ролик</a><a class="btn" href="#more">Звуки, шрифты →</a></div>
+<div class="next"><a class="btn ghost" href="#first">← Первый ролик</a><a class="btn" href="#more">Звуки и шрифты →</a></div>
 </section>
 
 <section class="page" id="p-more">
-<div class="hero"><p class="kicker">Возможности</p><h1>Звуки, шрифты, распаковка</h1></div>
+<div class="hero"><p class="kicker">Возможности</p><h1>Звуки и шрифты</h1></div>
 <div class="step"><span class="num">Звук</span><h3>48 звуковых эффектов</h3><p>Переходы, щелчки, удары, реакции, печать — уже внутри агента. Он сам ставит звук на склейку и на появление плашки. Смысловые звуки (реакция, удар на цифре, нарастание) предлагает таблицей «время · звук · зачем» и ставит только после вашего «да».</p></div>
 <div class="step"><span class="num">Шрифты и образ</span><h3>Ваш стиль</h3><p>Шрифты внутри — с открытой или бесплатной коммерческой лицензией: можно в рекламе и на заказ.</p>
 <div class="copybox"><div class="head">Образ<button class="copy" type="button">Скопировать</button></div><pre>Давай настроим мой образ: вот мои примеры (Reels, шрифты, цвета, Pinterest) — или предложи 3 варианта.</pre></div></div>
-<div class="step" id="unpack"><span class="num">Бонус · подарок</span><h3>Распаковка: ваша аудитория и ваша экспертность</h3>
-<p>Хотите, чтобы агент лучше понимал вашу целевую аудиторию и ваши экспертные знания? Возьмите 2 промта в подарок — сначала глубокое исследование ЦА, потом распаковка экспертности.</p>
-<ol><li><b>Откройте обычный чат Claude</b> (не Code) — так опрос не тратит лимиты монтажного агента. Можно пройти и прямо в агенте, но в чате выгоднее.</li>
-<li><b>Промт 1 — исследование ЦА.</b> Вставьте промт, ответьте на вопросы. В конце попросите выгрузить результат файлом <b>.md</b>.</li>
-<li><b>Промт 2 — распаковка экспертности.</b> То же самое: опрос → файл <b>.md</b>.</li>
-<li><b>Вернитесь к монтажному агенту</b>, прикрепите оба файла и напишите: <b>«Сохрани распаковку»</b>.</li></ol>
-<div class="choose" style="margin:1rem 0"><a class="choice" href="https://lavrilook.github.io/library/research-audience/" target="_blank" rel="noopener"><span class="tag">Промт 1</span><h3>Глубокое исследование ЦА</h3><span class="btn">Открыть промт →</span></a><a class="choice" href="https://lavrilook.github.io/library/prompts/raspakovka-ekspertnosti/" target="_blank" rel="noopener"><span class="tag">Промт 2</span><h3>Распаковка экспертности</h3><span class="btn">Открыть промт →</span></a></div>
-<p class="note">После этого агент лучше выстраивает хуки, предлагает идеи вирусных Reels и пишет подписи под вашу аудиторию и ваши экспертные знания — вашими словами, а не «как принято в нише». Промты есть и внутри агента: напишите ему «Распакуй меня».</p></div>
 <div class="step" id="pixabay"><span class="num">По желанию · бесплатно</span><h3>Pixabay: фото, видео и музыка для вставок</h3>
 <p><a href="https://pixabay.com" rel="noopener" target="_blank">Pixabay</a> — бесплатная библиотека фото, видео и музыки: можно использовать в роликах и рекламе без указания автора. Агент сам найдёт подходящие вставки, покажет лист с номерами и скачает выбранные.</p>
 <ol><li><a href="https://pixabay.com" rel="noopener" target="_blank">pixabay.com</a> → <b>Join</b> → вход через Google.</li><li><a href="https://pixabay.com/api/docs/" rel="noopener" target="_blank">pixabay.com/api/docs</a> → раздел <b>Parameters</b> → строка <b>key</b> → скопируйте ваш ключ.</li></ol>
@@ -318,7 +306,20 @@ python3 -m venv .venv &amp;&amp; \
 <div class="copybox"><div class="head">Проверка<button class="copy" type="button">Скопировать</button></div><pre>Найди вертикальное видео «кофе утро» на Pixabay.</pre></div>
 <figure><img alt="Агент нашёл видео на Pixabay" loading="lazy" src="img/cx-pixabay-test.jpg"/></figure></div>
 <div class="step"><span class="num">Обновления</span><h3>Новые приёмы</h3><p>Выходят обновлениями: архив и промт обновления. Ваши ролики, образ и правила сохраняются.</p></div>
-<div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#comp">Анализ конкурентов →</a></div>
+<div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#unpack">Распаковка →</a></div>
+</section>
+
+<section class="page" id="p-unpack">
+<div class="hero"><p class="kicker">Бонус · подарок</p><h1>Распаковка: аудитория и экспертность</h1><p class="lead">Чтобы агент писал хуки, сценарии и подписи вашими словами и под вашу аудиторию.</p></div>
+<div class="step"><span class="num">Бонус · подарок</span><h3>Распаковка: ваша аудитория и ваша экспертность</h3>
+<p>Хотите, чтобы агент лучше понимал вашу целевую аудиторию и ваши экспертные знания? Возьмите 2 промта в подарок — сначала глубокое исследование ЦА, потом распаковка экспертности.</p>
+<ol><li><b>Откройте обычный чат Claude</b> (не Code) — так опрос не тратит лимиты монтажного агента. Можно пройти и прямо в агенте, но в чате выгоднее.</li>
+<li><b>Промт 1 — исследование ЦА.</b> Вставьте промт, ответьте на вопросы. В конце попросите выгрузить результат файлом <b>.md</b>.</li>
+<li><b>Промт 2 — распаковка экспертности.</b> То же самое: опрос → файл <b>.md</b>.</li>
+<li><b>Вернитесь к монтажному агенту</b>, прикрепите оба файла и напишите: <b>«Сохрани распаковку»</b>.</li></ol>
+<div class="choose" style="margin:1rem 0"><a class="choice" href="https://lavrilook.github.io/library/research-audience/" target="_blank" rel="noopener"><span class="tag">Промт 1</span><h3>Глубокое исследование ЦА</h3><span class="btn">Открыть промт →</span></a><a class="choice" href="https://lavrilook.github.io/library/prompts/raspakovka-ekspertnosti/" target="_blank" rel="noopener"><span class="tag">Промт 2</span><h3>Распаковка экспертности</h3><span class="btn">Открыть промт →</span></a></div>
+<p class="note">После этого агент лучше выстраивает хуки, предлагает идеи вирусных Reels и пишет подписи под вашу аудиторию и ваши экспертные знания — вашими словами, а не «как принято в нише». Промты есть и внутри агента: напишите ему «Распакуй меня».</p></div>
+<div class="next"><a class="btn ghost" href="#more">← Звуки и шрифты</a><a class="btn" href="#comp">Анализ конкурентов →</a></div>
 </section>
 
 <section class="page" id="p-comp">
@@ -372,7 +373,7 @@ python3 -m venv .venv &amp;&amp; \
 <div class="copybox"><div class="head">Сводка<button class="copy" type="button">Скопировать</button></div><pre>Сохрани список моих конкурентов. Каждую неделю делай сводку: что у них залетело за 7 дней, почему, и 3 идеи для меня.</pre></div>
 <p class="note">В облаке для этого нужны домены соцсетей со звёздочками (они уже в списке). Сводку удобно вести в отдельной сессии «Конкуренты».</p></div>
 <div class="step"><span class="num">Помощь</span><h3>Подключить Metricool и добавить конкурентов</h3><p>Хотите разобраться, как подключить Metricool к Claude, добавить конкурентов и регулярно их анализировать — настроим вместе на консультации.</p><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
-<div class="next"><a class="btn ghost" href="#more">← Звуки, шрифты</a><a class="btn" href="#edits">Как попросить правку →</a></div>
+<div class="next"><a class="btn ghost" href="#unpack">← Распаковка</a><a class="btn" href="#edits">Как попросить правку →</a></div>
 </section>
 
 <section class="page" id="p-edits">
@@ -390,11 +391,11 @@ python3 -m venv .venv &amp;&amp; \
 Когда я говорю «в общем», я запинаюсь — вырежи эти места.</pre></div>
 <p>Каждый раз агент предлагает выбор: сказать правку словами — или <a href="#editor">открыть редактор</a> и поправить самим.</p></div>
 <div class="step"><span class="num">Если что-то не так</span><h3>Вернуть, как было</h3><p>«Стоп. Верни, как было» — старые версии агент не затирает. Исходное видео не меняется никогда.</p></div>
-<div class="next"><a class="btn ghost" href="#comp">← Анализ конкурентов</a><a class="btn" href="#help">Если не получилось →</a></div>
+<div class="next"><a class="btn ghost" href="#comp">← Анализ конкурентов</a><a class="btn" href="#help">Частые вопросы →</a></div>
 </section>
 
 <section class="page" id="p-help">
-<div class="hero"><p class="kicker">Помощь</p><h1>Если не получилось</h1><p class="lead">Сначала напишите агенту, на каком шаге остановились, и пришлите текст ошибки — попросите объяснить простыми словами.</p></div>
+<div class="hero"><p class="kicker">Помощь</p><h1>Частые вопросы</h1><p class="lead">Сначала напишите агенту, на каком шаге остановились, и пришлите текст ошибки — попросите объяснить простыми словами.</p></div>
 <div class="step" id="teach"><span class="num">Агент — ваш сотрудник</span><h3>Не программа, а сотрудник, который учится у вас</h3>
 <p>Агенту можно давать задачи, просить объяснить, учить новому и разбирать ошибки — как с живым помощником. Всё, о чём договорились, он записывает в свои правила и уроки и помнит в следующих роликах.</p>
 <div class="copybox"><div class="head">Не получилось — объясни<button class="copy" type="button">Скопировать</button></div><pre>Объясни простыми словами, что не получилось и почему. Что ты уже проверил и какие есть варианты?</pre></div>
@@ -419,7 +420,7 @@ python3 -m venv .venv &amp;&amp; \
 <details><summary>Что если закончатся лимиты Claude?</summary><div><p>Агент сохраняет работу в репозиторий — продолжите в новой сессии. Попросите работать экономно:</p><div class="copybox"><div class="head">Экономно<button class="copy" type="button">Скопировать</button></div><pre>Работай поэтапно и экономно. Перед каждым большим шагом скажи, сколько примерно это займёт по времени и лимитам. Если лимиты подходят к концу — остановись на удобном месте, сохрани, что сделано, и напиши, с чего продолжить.</pre></div></div></details>
 </div>
 <div class="cta-line"><span>Не получилось за 2–3 попытки — настроим вместе.</span><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
-<div class="next"><a class="btn ghost" href="#edits">← Правки</a><a class="btn" href="#get">Получить агента →</a></div>
+<div class="next"><a class="btn ghost" href="#edits">← Как попросить правку</a><a class="btn" href="#get">Получить агента →</a></div>
 </section>
 
 <section class="page" id="p-get">
@@ -454,7 +455,7 @@ python3 -m venv .venv &amp;&amp; \
 <footer class="wrap"><span>LAVRI LOOK · авторская методика LAVRI</span><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Telegram @lavri_ai</a></footer>
 <script>
 (function(){
-  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update','comp'];
+  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update','comp','unpack'];
   function show(){
     var h=(location.hash||'#home').slice(1), page='home', target=null;
     if(pages.indexOf(h)>=0){page=h}else{var el=document.getElementById(h);if(el){var p=el.closest('.page');if(p){page=p.id.slice(2);target=el}}}
