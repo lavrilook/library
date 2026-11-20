@@ -1,85 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="light" name="color-scheme"/>
 <meta content="Монтажный агент LAVRI Cut для Claude: что внутри, установка на компьютер или в облако, первый ролик, редактор, правки. Инструкции с картинками и промтами для копирования." name="description"/>
-<title>Монтажный агент LAVRI Cut · LAVRI LOOK</title>
-<style>
-:root{--paper:#f6f4ed;--ink:#25332a;--muted:#4c5c52;--wash:#e6eddf;--green:#263f33;--rule:#ccd6c9;--white:#fffcf7;--accent:#8c674c}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{width:min(100% - 2rem,52rem);margin-inline:auto}
-.brand{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.1rem;border-bottom:1px solid var(--rule);font-size:.75rem;font-weight:600;letter-spacing:.16em}
-.brand a{text-decoration:none}
-.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0 0}
-.tabs a{display:inline-flex;align-items:center;min-height:40px;padding:.4rem .9rem;border:1px solid var(--rule);border-radius:999px;background:var(--white);text-decoration:none;font-size:.88rem}
-.tabs a[aria-current="page"]{background:var(--green);border-color:var(--green);color:#fff}
-.tabs a.buy{border-color:var(--green);font-weight:600}
-.hero{margin-top:1.25rem;padding:clamp(1.3rem,5vw,2.6rem);background:var(--wash);border-radius:1.35rem}
-.kicker{margin:0 0 .55rem;text-transform:uppercase;letter-spacing:.1em;font-size:.73rem;font-weight:700;color:var(--muted)}
-h1,h2,h3{font-family:Georgia,"Noto Serif",serif;font-weight:400;line-height:1.15;margin:0}
-h1{font-size:clamp(1.9rem,6.5vw,3.2rem);letter-spacing:-.03em}
-h2{font-size:clamp(1.45rem,4vw,2rem);margin-top:2.4rem}
-h3{font-size:1.25rem;margin-top:1.6rem}
-.lead{margin:.9rem 0 0;font-size:1.05rem;color:var(--muted)}
-.choose{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.4rem 0}
-.choice{display:block;padding:1.4rem;background:var(--white);border:1px solid var(--rule);border-radius:1.25rem;text-decoration:none}
-.choice:hover{border-color:var(--green)}
-.choice h3{margin:0 0 .4rem}
-.choice ul{margin:.6rem 0 1rem;padding-left:1.1rem}.choice li{margin:.3rem 0}
-.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:46px;padding:.6rem 1.2rem;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;border:1px solid var(--green)}
-.btn.ghost{background:transparent;color:var(--green)}
-.tag{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;background:var(--wash);color:var(--muted);margin-bottom:.5rem}
-table.cmp{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem;background:var(--white);border-radius:1rem;overflow:hidden}
-.cmp th,.cmp td{padding:.75rem .9rem;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top;overflow-wrap:anywhere}
-.cmp th{background:var(--wash);font-weight:600}
-.cmp td:first-child{font-weight:600;width:30%}
-.step{margin:1.4rem 0;padding:clamp(1rem,4vw,1.8rem);background:var(--white);border:1px solid var(--rule);border-radius:1.25rem}
-.step .num{display:inline-block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.3rem}
-.step h3{margin:0 0 .6rem}
-.step ol,.step ul{padding-left:1.2rem}.step li{margin:.35rem 0}
-figure{margin:1rem 0 0}figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:.9rem;background:#fff}
-figcaption{font-size:.85rem;color:var(--muted);margin-top:.4rem}
-.copybox{margin:1rem 0 0;border:1px solid var(--rule);border-radius:1rem;background:#fbfaf5}
-.copybox .head{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.6rem .9rem;border-bottom:1px solid var(--rule);font-size:.85rem;color:var(--muted)}
-.copy{min-height:40px;padding:.4rem .9rem;border:1px solid var(--green);border-radius:.6rem;background:var(--green);color:#fff;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
-.copybox pre{margin:0;padding:.9rem;font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
-code{overflow-wrap:anywhere}
-.note{margin:1rem 0 0;padding:.9rem 1.1rem;background:var(--wash);border-radius:.9rem}
-.warn{margin:1rem 0 0;padding:.9rem 1.1rem;background:#f4e9df;border-radius:.9rem}
-.toc{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}
-.toc a{font-size:.85rem;padding:.3rem .75rem;border:1px solid var(--rule);border-radius:999px;text-decoration:none;background:var(--white)}
-.next{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:2rem 0}
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
-.feat div{padding:1rem 1.1rem;background:var(--white);border:1px solid var(--rule);border-radius:1rem}
-.feat b{display:block;margin-bottom:.2rem}
-.offer{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.4rem 0}
-.offer .card{padding:1.5rem;background:var(--white);border:1px solid var(--rule);border-radius:1.25rem;display:flex;flex-direction:column;gap:.6rem}
-.offer .card h3{margin:0}.offer .card .tag{align-self:flex-start}
-.offer .price{font-family:Georgia,serif;font-size:2rem}
-.offer .card ul{margin:0;padding-left:1.1rem}
-.offer .card .btn{margin-top:auto;align-self:flex-start}
-.two{display:grid;grid-template-columns:2fr 1fr;gap:.8rem;align-items:start}
-footer{margin-top:3rem;padding:1rem 0 2rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-a{color:inherit;text-underline-offset:.22em}
-:focus-visible{outline:3px solid #607d51;outline-offset:3px}
-.qa details{margin:.6rem 0;background:var(--white);border:1px solid var(--rule);border-radius:1rem;padding:.2rem 1.1rem}.qa summary{cursor:pointer;font-weight:600;padding:.8rem 0;list-style:none}.qa summary::-webkit-details-marker{display:none}.qa summary::before{content:"＋";color:var(--accent);margin-right:.6rem}.qa details[open] summary::before{content:"−"}.qa details>div{padding:0 0 1rem}
-.cta-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.6rem 0;padding:1rem 1.2rem;background:var(--wash);border-radius:1rem}
-.tabs-rows .tabs{margin:.45rem 0 0}.tabs-rows .tabs:first-child{margin-top:1rem}
-.tabs-buy{margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--rule)}
-.cmp{table-layout:fixed}.cmp th,.cmp td{overflow-wrap:normal;word-break:normal;hyphens:auto;-webkit-hyphens:auto}
-@media(max-width:700px){.tabs{gap:.3rem}.tabs a{font-size:.8rem;padding:.35rem .6rem;min-height:36px}.cmp th,.cmp td{padding:.6rem .5rem;font-size:.82rem}.cmp td:first-child{width:28%!important}}
-.page{display:none}.page.on{display:block}
-@media(max-width:700px){.choose,.two,.feat,.offer{grid-template-columns:1fr}.cmp{font-size:.88rem}.cmp td:first-child{width:auto}.help,.help tbody,.help tr,.help td{display:block;width:auto!important}.help td:first-child{border-bottom:0;padding-bottom:0}}
-@media print{.tabs,.copy,.next{display:none}.page{display:block!important}}
-</style>
-</head>
-<body>
-<header class="wrap">
-<div class="brand"><a href="#home">LAVRI LOOK · LAVRI Cut</a><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Поддержка ↗</a></div>
+<title>Claude: подключение монтажного агента LAVRI Cut · LAVRI LOOK</title>
+<link href="../../assets/lavri-cut/guide.css?v=codex-1" rel="stylesheet"/><noscript><style>.page{display:block}</style></noscript></head>
+<body data-platform="claude">
+<header class="wrap" id="contents">
+<div class="brand"><a href="#home">LAVRI LOOK · LAVRI Cut</a><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Поддержка ↗</a></div><nav aria-label="Платформа агента" class="platform-links"><a href="../../">← Библиотека</a><a href="../montazhny-agent/">Выбрать платформу</a><a href="../lavri-cut-codex/">Codex</a><a aria-current="page" href="../lavri-cut/">Claude</a></nav>
 <nav aria-label="Содержание" class="tabs-rows">
 <div class="tabs"><a data-page="home" href="#home">Что внутри агента</a><a data-anchor="where" href="#where">Где работает агент</a></div>
 <div class="tabs"><a class="buy" data-page="pc" href="#pc">Установка на компьютер</a><a class="buy" data-page="cloud" href="#cloud">Установка в облако</a></div>
@@ -88,14 +19,13 @@ a{color:inherit;text-underline-offset:.22em}
 <div class="tabs"><a data-page="comp" href="#comp">Анализ конкурентов</a><a data-page="edits" href="#edits">Как просить правку</a><a data-page="help" href="#help">Частые вопросы</a></div>
 </nav>
 <nav aria-label="Доступ" class="tabs tabs-buy">
-<a class="buy" data-page="get" href="#get">Получить агента</a>
-<a class="buy" data-page="update" href="#update">Обновить агента</a>
+<a class="buy" href="#where">Подключить</a><a class="buy" data-page="get" href="#get">Получить агента</a>
+<a class="buy" data-page="update" href="../lavri-cut-update/?platform=claude">Обновить агента</a>
 </nav>
 </header>
 <main class="wrap">
-
 <section class="page" id="p-home">
-<div class="hero"><p class="kicker">Монтажный агент LAVRI Cut</p><h1>Свой монтажёр Reels в Claude</h1>
+<div class="hero"><p class="kicker">Монтажный агент LAVRI Cut · Claude</p><h1>Свой монтажёр Reels в Claude</h1>
 <p class="lead">Готовый агент по авторской методике LAVRI: чистит шум и паузы, ставит субтитры, плашки, звуки и переходы, принимает правки словами или в редакторе. Решения всегда за вами.</p></div>
 <h2>Что внутри агента</h2>
 <div class="feat">
@@ -132,7 +62,6 @@ a{color:inherit;text-underline-offset:.22em}
 <p class="note">Сомневаетесь — начните с компьютера: это проще всего. В облако агента можно перенести позже.</p>
 <div class="next"><span></span><a class="btn" href="#get">Получить агента →</a></div>
 </section>
-
 <section class="page" id="p-pc">
 <div class="hero"><p class="kicker">Mac или Windows</p><h1>Установка на компьютер</h1>
 <p class="lead">Папка, архив, Claude, один промт. Программы агент поставит сам.</p></div>
@@ -159,7 +88,6 @@ a{color:inherit;text-underline-offset:.22em}
 <div class="cta-line"><span>Не получается установить — настроим вместе.</span><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#first">Первый ролик →</a></div>
 </section>
-
 <section class="page" id="p-cloud">
 <div class="hero"><p class="kicker">Компьютер + телефон</p><h1>Установка в облако</h1>
 <p class="lead">Агент живёт в вашем личном репозитории GitHub и работает в облаке Claude — монтаж с телефона и с компьютера. Настройка сложнее: если не получится, настроим вместе на консультации.</p></div>
@@ -229,7 +157,7 @@ python3 -m venv .venv &amp;&amp; \
   .venv/bin/python -m pip install \
   -r requirements.lock.txt || true</pre></div>
 <p>Нажмите <b>Save changes</b>. Проверьте ещё раз галочку <b>Allow package managers</b>.</p>
-<figure><img alt="Setup script и Save changes" loading="lazy" src="img/c3-script.jpg"/></figure></div>
+<figure><img alt="Setup script и Save changes" loading="lazy" src="img/c3-script.jpg"/></figure><figure><img alt="Как заменить список доменов: удалить старый, вставить новый, Save changes" loading="lazy" src="img/c3-domains-replace.jpg"/></figure></div>
 <div class="step" id="cl-4"><span class="num">Шаг 4</span><h3>Коннекторы</h3>
 <p>claude.ai → <b>Customize</b> → <b>Connectors</b>. Подключите <b>до первого сообщения агенту</b> — иначе нужна новая сессия.</p>
 <ul><li><b>Google Drive</b> — рекомендую: видео с телефона загружайте на Диск, агент заберёт даже большие.</li><li><b>Higgsfield</b> — по желанию. Нужен <b>полный</b> коннектор: <b>+ Add</b> → <b>Add custom connector</b> → Name: Higgsfield, URL ниже → <b>Add</b> → <b>Connect</b> → войдите в свой аккаунт. Карточка «Higgsfield AI» (про Claude Motion) не подходит — в ней нет генерации.</li></ul>
@@ -264,7 +192,6 @@ python3 -m venv .venv &amp;&amp; \
 <div class="cta-line"><span>Не получается установить — настроим вместе.</span><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#first">Первый ролик →</a></div>
 </section>
-
 <section class="page" id="p-first">
 <div class="hero"><p class="kicker">Работа</p><h1>Первый ролик</h1><p class="lead">Агент предлагает — вы решаете. Исходное видео не меняется никогда.</p></div>
 <div class="step"><span class="num">Видео</span><h3>Положите видео</h3>
@@ -275,23 +202,21 @@ python3 -m venv .venv &amp;&amp; \
 <ol><li><b>Бриф:</b> тема, хук, призыв, длина.</li><li><b>Шум «до / после»:</b> 12 секунд — слушаете и выбираете.</li><li><b>Таблица «оставить / вырезать»:</b> паузы, заминки, дубли.</li><li><b>Превью:</b> черновик с субтитрами, плашками и звуком — правки словами или в редакторе.</li><li><b>Финал:</b> только после вашего «да», затем приёмка и готовый файл.</li></ol>
 <figure><img alt="Таблица оставить или вырезать" loading="lazy" src="img/step-4-pervyj-rolik.jpg"/></figure>
 <h3>Следующий ролик</h3><p>Новая папка (reel-02, reel-03…) и та же фраза. Ваш образ и выводы прошлых роликов агент применит сам.</p></div>
-<div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#editor">Редактор →</a></div>
+<p class="note">Перед началом сообщите площадку, аудиторию, формат, ориентир длительности и желаемый результат. Агент сначала проверяет доступ к исходнику. Если коннектор не умеет скачивать видео, передайте файл другим доступным способом. Окончательный монтаж и финал — после вашего согласования.</p><div class="next"><a class="btn ghost" href="#home">← Что внутри</a><a class="btn" href="#editor">Редактор →</a></div>
 </section>
-
 <section class="page" id="p-editor">
-<div class="hero"><p class="kicker">Правка пальцем и мышкой</p><h1>Редактор</h1><p class="lead">Напишите агенту «Открой редактор» — откроется кадр ролика и все элементы.</p></div>
+<div class="hero"><p class="kicker">Правка пальцем и мышкой</p><h1>Редактор</h1><p class="lead">Попросите агента открыть редактор доступным в этой сессии способом. В облаке внутренний localhost не является ссылкой для вашего телефона.</p></div>
 <div class="step"><span class="num">Что можно</span><h3>Двигать, менять, выбирать</h3>
 <ul><li>Двигать плашки и иконки прямо на кадре — пальцем или мышкой.</li><li>Менять текст, размер и время появления.</li><li>Выбирать стиль субтитров в один клик — 13 вариантов.</li><li>Наклон горизонта, крупность спикера, счётчик.</li><li>Вкладка «▶ Видео» — последнее превью; «◐ Было» — сравнить с исходником.</li></ul>
-<p>Кнопка <b>«Сохранить новой версией»</b> — и агент соберёт новое превью. Старые версии не пропадают.</p>
+<p>Нажмите <b>«Сохранить новой версией»</b>, затем попросите агента собрать новое превью и полный MP4. Сохранение правок само по себе не запускает сборку видео. Старые версии сохраняются.</p>
 <div class="two"><figure><img alt="Редактор на компьютере" loading="lazy" src="img/redaktor-kompyuter.jpg"/><figcaption>На компьютере.</figcaption></figure><figure><img alt="Редактор на телефоне" loading="lazy" src="img/redaktor-telefon.jpg"/><figcaption>На телефоне — в облачном варианте.</figcaption></figure></div>
 <figure><img alt="Темы оформления редактора" loading="lazy" src="img/redaktor-oformlenie.jpg"/><figcaption>Оформление: мой образ, тёплое, тёмное, чёрно-белое.</figcaption></figure></div>
 <div class="step" id="editor-own"><span class="num">Под себя</span><h3>Редактор можно настроить</h3>
 <p>Редактор — часть вашего агента, его можно менять словами. Опишите, что хотите видеть: какие поля и разделы, в каком порядке, как назвать, какие убрать, какие цвета и размер кнопок. Агент перестроит редактор и покажет, как стало.</p>
 <div class="copybox"><div class="head">Пример<button class="copy" type="button">Скопировать</button></div><pre>Хочу, чтобы в редакторе первым шёл раздел «Субтитры», потом «Плашки». Раздел «Счётчик» убери — я им не пользуюсь. Добавь поле «цвет подложки субтитров». Кнопки сделай крупнее, чтобы удобно нажимать с телефона. Покажи, как стало.</pre></div>
 <p class="note">Новые приёмы, которые вы добавляете в агента (новый вид субтитров, плашка, эффект), агент сам добавляет и в редактор.</p></div>
-<div class="next"><a class="btn ghost" href="#first">← Первый ролик</a><a class="btn" href="#more">Звуки и шрифты →</a></div>
+<div class="step" id="editor-files"><span class="num">Просмотр и скачивание</span><h3>Сначала правки, затем новая сборка</h3><p>В актуальной версии редактора ищите отдельную кнопку «Скачать MP4»: она должна вести на полный файл. Если правки ещё не собраны, скачивается предыдущий MP4. Сохраните настройки → попросите агента собрать новую версию → откройте новый файл. Если кнопки нет в вашей версии, попросите прямую ссылку на MP4 и уточните обновление у поддержки.</p><p>На телефоне ролик должен оставаться виден, пока вы прокручиваете настройки; на компьютере панель настроек располагается рядом с видео. Состав полей зависит от выданной версии. Финал проверяется технически, визуально и по содержанию и звуку, включая речь и безопасные зоны.</p><h3>Что должно скачиваться</h3><table class="cmp"><thead><tr><th>Формат</th><th>Просмотр</th><th>Отдельный файл</th></tr></thead><tbody><tr><td>MP4</td><td>Видео или редактор</td><td>Полный MP4</td></tr><tr><td>PNG / JPG</td><td>Изображение или обложка</td><td>Исходный PNG / JPG</td></tr><tr><td>MD / TXT</td><td>Текст для чтения и копирования</td><td>Сам MD / TXT</td></tr><tr><td>PDF</td><td>Предпросмотр, если поддерживается</td><td>Сам PDF</td></tr><tr><td>ZIP</td><td>Прямая ссылка на архив</td><td>Сам ZIP, без HTML-контейнера</td></tr><tr><td>HTML</td><td>Запрошенная страница или редактор</td><td>HTML, только если нужна сама страница</td></tr></tbody></table><p>Если вместо файла скачалась маленькая страница или ошибка, попросите проверить ссылку и размер результата. Права на папку Google Диска не подтверждают наличие инструмента записи в неё.</p></div><div class="next"><a class="btn ghost" href="#first">← Первый ролик</a><a class="btn" href="#more">Звуки и шрифты →</a></div>
 </section>
-
 <section class="page" id="p-more">
 <div class="hero"><p class="kicker">Возможности</p><h1>Звуки и шрифты</h1></div>
 <div class="step"><span class="num">Звук</span><h3>48 звуковых эффектов</h3><p>Переходы, щелчки, удары, реакции, печать — уже внутри агента. Он сам ставит звук на склейку и на появление плашки. Смысловые звуки (реакция, удар на цифре, нарастание) предлагает таблицей «время · звук · зачем» и ставит только после вашего «да».</p></div>
@@ -300,15 +225,14 @@ python3 -m venv .venv &amp;&amp; \
 <div class="step" id="pixabay"><span class="num">По желанию · бесплатно</span><h3>Pixabay: фото, видео и музыка для вставок</h3>
 <p><a href="https://pixabay.com" rel="noopener" target="_blank">Pixabay</a> — бесплатная библиотека фото, видео и музыки: можно использовать в роликах и рекламе без указания автора. Агент сам найдёт подходящие вставки, покажет лист с номерами и скачает выбранные.</p>
 <ol><li><a href="https://pixabay.com" rel="noopener" target="_blank">pixabay.com</a> → <b>Join</b> → вход через Google.</li><li><a href="https://pixabay.com/api/docs/" rel="noopener" target="_blank">pixabay.com/api/docs</a> → раздел <b>Parameters</b> → строка <b>key</b> → скопируйте ваш ключ.</li></ol>
-<h3>На компьютере</h3><p>Напишите агенту: <b>«Сохрани мой ключ Pixabay в файл .env»</b> и вставьте ключ. Файл остаётся только у вас в папке.</p>
+<h3>На компьютере</h3><p>Попросите подготовить локальный <code>.env</code> и добавить его в <code>.gitignore</code>. Значение ключа внесите в файл самостоятельно на своём компьютере; не присылайте его в чат и не сохраняйте в Git.</p>
 <h3>В облаке</h3><p>Шестерёнка у вашей среды → <b>Environment variables</b> → <code>PIXABAY_API_KEY=ваш_ключ</code> → <b>Save changes</b> → откройте <a href="#cl-9">новую сессию</a> (в старой ключа не будет). В чат ключ не присылайте.</p>
 <figure><img alt="Ключ Pixabay в переменных облачной среды" loading="lazy" src="img/cx-pixabay-key.jpg"/></figure>
 <div class="copybox"><div class="head">Проверка<button class="copy" type="button">Скопировать</button></div><pre>Найди вертикальное видео «кофе утро» на Pixabay.</pre></div>
 <figure><img alt="Агент нашёл видео на Pixabay" loading="lazy" src="img/cx-pixabay-test.jpg"/></figure></div>
 <div class="step"><span class="num">Обновления</span><h3>Новые приёмы</h3><p>Выходят обновлениями: архив и промт обновления. Ваши ролики, образ и правила сохраняются.</p></div>
-<div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#unpack">Распаковка →</a></div>
+<p class="note">Количество звуков, стилей и шрифтов проверяйте по своему пакету. Для каждого внешнего материала нужны подходящие права и лицензия; бесплатная площадка не гарантирует, что любой файл подходит для любой рекламы. Платную музыку, эффекты и генерации агент подключает только после вашего согласия.</p><div class="next"><a class="btn ghost" href="#editor">← Редактор</a><a class="btn" href="#unpack">Распаковка →</a></div>
 </section>
-
 <section class="page" id="p-unpack">
 <div class="hero"><p class="kicker">Бонус · подарок</p><h1>Распаковка: аудитория и экспертность</h1><p class="lead">Чтобы агент писал хуки, сценарии и подписи вашими словами и под вашу аудиторию.</p></div>
 <div class="step"><span class="num">Бонус · подарок</span><h3>Распаковка: ваша аудитория и ваша экспертность</h3>
@@ -317,11 +241,10 @@ python3 -m venv .venv &amp;&amp; \
 <li><b>Промт 1 — исследование ЦА.</b> Вставьте промт, ответьте на вопросы. В конце попросите выгрузить результат файлом <b>.md</b>.</li>
 <li><b>Промт 2 — распаковка экспертности.</b> То же самое: опрос → файл <b>.md</b>.</li>
 <li><b>Вернитесь к монтажному агенту</b>, прикрепите оба файла и напишите: <b>«Сохрани распаковку»</b>.</li></ol>
-<div class="choose" style="margin:1rem 0"><a class="choice" href="https://lavrilook.github.io/library/research-audience/" target="_blank" rel="noopener"><span class="tag">Промт 1</span><h3>Глубокое исследование ЦА</h3><span class="btn">Открыть промт →</span></a><a class="choice" href="https://lavrilook.github.io/library/prompts/raspakovka-ekspertnosti/" target="_blank" rel="noopener"><span class="tag">Промт 2</span><h3>Распаковка экспертности</h3><span class="btn">Открыть промт →</span></a></div>
+<div class="choose" style="margin:1rem 0"><a class="choice" href="https://lavrilook.github.io/library/research-audience/" rel="noopener" target="_blank"><span class="tag">Промт 1</span><h3>Глубокое исследование ЦА</h3><span class="btn">Открыть промт →</span></a><a class="choice" href="https://lavrilook.github.io/library/prompts/raspakovka-ekspertnosti/" rel="noopener" target="_blank"><span class="tag">Промт 2</span><h3>Распаковка экспертности</h3><span class="btn">Открыть промт →</span></a></div>
 <p class="note">После этого агент лучше выстраивает хуки, предлагает идеи вирусных Reels и пишет подписи под вашу аудиторию и ваши экспертные знания — вашими словами, а не «как принято в нише». Промты есть и внутри агента: напишите ему «Распакуй меня».</p></div>
-<div class="next"><a class="btn ghost" href="#more">← Звуки и шрифты</a><a class="btn" href="#comp">Анализ конкурентов →</a></div>
+<p class="note">Если профиль аудитории и экспертности уже сохранён в проекте, попросите использовать его. Повторять весь опрос не нужно: уточняйте только изменившиеся данные.</p><div class="next"><a class="btn ghost" href="#more">← Звуки и шрифты</a><a class="btn" href="#comp">Анализ конкурентов →</a></div>
 </section>
-
 <section class="page" id="p-comp">
 <div class="hero"><p class="kicker">Идеи для роликов</p><h1>Анализ конкурентов</h1><p class="lead">Агент разбирает чужие Reels — хук, приёмы, почему залетел — и предлагает идеи и сценарий под вас. Чужой ролик — только для разбора, не для публикации.</p></div>
 <div class="step"><span class="num">Один Reels</span><h3>Полный разбор ролика: таблица, хуки, почему залетел</h3>
@@ -373,9 +296,8 @@ python3 -m venv .venv &amp;&amp; \
 <div class="copybox"><div class="head">Сводка<button class="copy" type="button">Скопировать</button></div><pre>Сохрани список моих конкурентов. Каждую неделю делай сводку: что у них залетело за 7 дней, почему, и 3 идеи для меня.</pre></div>
 <p class="note">В облаке для этого нужны домены соцсетей со звёздочками (они уже в списке). Сводку удобно вести в отдельной сессии «Конкуренты».</p></div>
 <div class="step"><span class="num">Помощь</span><h3>Подключить Metricool и добавить конкурентов</h3><p>Хотите разобраться, как подключить Metricool к Claude, добавить конкурентов и регулярно их анализировать — настроим вместе на консультации.</p><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
-<div class="next"><a class="btn ghost" href="#unpack">← Распаковка</a><a class="btn" href="#edits">Как попросить правку →</a></div>
+<p class="note">Доступ к ссылкам, метрикам и закрытым источникам проверяется отдельно. Если доступны только текст или часть показателей, агент должен назвать ограничение и не придумывать визуал и цифры. Еженедельная сводка требует реально настроенного расписания; без него запускайте запрос вручную.</p><div class="next"><a class="btn ghost" href="#unpack">← Распаковка</a><a class="btn" href="#edits">Как попросить правку →</a></div>
 </section>
-
 <section class="page" id="p-edits">
 <div class="hero"><p class="kicker">Правки</p><h1>Как попросить правку</h1><p class="lead">Своими словами — как удобно. Каждая правка — новая версия, к старой можно вернуться.</p></div>
 <div class="step"><span class="num">Как удобно</span><h3>Три способа сказать, что поправить</h3>
@@ -393,7 +315,6 @@ python3 -m venv .venv &amp;&amp; \
 <div class="step"><span class="num">Если что-то не так</span><h3>Вернуть, как было</h3><p>«Стоп. Верни, как было» — старые версии агент не затирает. Исходное видео не меняется никогда.</p></div>
 <div class="next"><a class="btn ghost" href="#comp">← Анализ конкурентов</a><a class="btn" href="#help">Частые вопросы →</a></div>
 </section>
-
 <section class="page" id="p-help">
 <div class="hero"><p class="kicker">Помощь</p><h1>Частые вопросы</h1><p class="lead">Сначала напишите агенту, на каком шаге остановились, и пришлите текст ошибки — попросите объяснить простыми словами.</p></div>
 <div class="step" id="teach"><span class="num">Агент — ваш сотрудник</span><h3>Не программа, а сотрудник, который учится у вас</h3>
@@ -419,59 +340,20 @@ python3 -m venv .venv &amp;&amp; \
 <details><summary>Нет «Готово и проверено» после установки</summary><div><p>Повторите <a href="#cl-6">шаг 6</a>. Не помогло — пришлите скриншот ответа агента.</p></div></details>
 <details><summary>Что если закончатся лимиты Claude?</summary><div><p>Агент сохраняет работу в репозиторий — продолжите в новой сессии. Попросите работать экономно:</p><div class="copybox"><div class="head">Экономно<button class="copy" type="button">Скопировать</button></div><pre>Работай поэтапно и экономно. Перед каждым большим шагом скажи, сколько примерно это займёт по времени и лимитам. Если лимиты подходят к концу — остановись на удобном месте, сохрани, что сделано, и напиши, с чего продолжить.</pre></div></div></details>
 </div>
-<div class="cta-line"><span>Не получилось за 2–3 попытки — настроим вместе.</span><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
+<h2>Работа, файлы и обновления</h2><div class="qa" data-shared-faq="1"><details><summary>Можно ли монтировать с телефона?</summary><div><p>Да, если агент установлен в облачной среде выбранной платформы. Откройте её с телефона, передайте исходник и задачу. Просмотровая открывается доступным в сессии способом. Чтобы вернуться в диалог, закройте вкладку или окно просмотра средствами своего приложения. Кнопки приложения и кнопки редактора могут отличаться.</p></div></details><details><summary>Вместо видео открылся код или HTML. Где сам ролик?</summary><div><p>Попросите отдельную ссылку на настоящий MP4. Страница редактора нужна для просмотра и правок, а скачивание должно вести на сам видеофайл. HTML-страница не заменяет MP4.</p></div></details><details><summary>Нет кнопки скачивания или файл весит несколько байт</summary><div><p>Попросите агента проверить, существует ли файл, его формат, размер, целостность и действительность ссылки. Затем — дать рабочую прямую ссылку или другой доступный способ выдачи. Ссылку на внутренний localhost облачной среды нельзя открыть с телефона как внешнюю страницу.</p></div></details><details><summary>Скачивается ли полное качество?</summary><div><p>В просмотровой может показываться облегчённая копия, а скачиваться должен отдельный полный MP4. Попросите не уменьшать финал без вашего согласия. Проверка файла агентом не подтверждает сохранение на телефоне: откройте скачанный ролик у себя.</p></div></details><details><summary>Я исправила текст в редакторе. Почему MP4 прежний?</summary><div><p>Сохранение настроек не собирает новое видео. Сохраните правки, попросите агента собрать новую версию, затем откройте обновлённый MP4. До новой сборки кнопка скачивания может относиться к предыдущему файлу.</p></div></details><details><summary>Не виден репозиторий или отказано в доступе</summary><div><p>Проверьте вход в свой аккаунт, доступ интеграции к нужному репозиторию и его выбор в задаче. В Codex это подключение GitHub в Codex; в Claude — GitHub Integration и выбор репозитория в Code. Текст промпта сам по себе доступ не создаёт.</p></div></details><details><summary>Нужно каждый раз добавлять домены и настраивать среду?</summary><div><p>Нет: сначала попросите проверить действующие настройки. В Claude домены и Setup script задаются по инструкции облачной среды вручную. В Codex агент проверяет доступные инструменты и готовит недостающее; если нужно сохранить настройки вручную, он должен назвать конкретное действие.</p></div></details><details><summary>Можно ли отправить готовый ролик на Google Диск?</summary><div><p>Только если в текущей сессии доступен инструмент записи на Диск и есть авторизация. Одной ссылки с правами редактора недостаточно. Сначала попросите проверить доступ, а если загрузка недоступна — скачайте MP4 и загрузите его сами.</p></div></details><details><summary>Как обновиться и сохранить ролики?</summary><div><p>Откройте общую инструкцию «Обновить агента». Нужны архив для вашего экземпляра, точка возврата и рабочая ветка. Номер, исходники, ролики, настройки, стили и правила сохраняются; конфликты разбираются до замены.</p></div></details><details><summary>Можно дать архив другу или получить ещё один экземпляр?</summary><div><p>За отдельным экземпляром обратитесь в поддержку автора. Агент не выдаёт копию самого себя. Архивировать собственные ролики можно; открытие уже установленного агента на другом устройстве не требует выпуска нового экземпляра.</p></div></details><details><summary>Архив действительно нельзя скопировать?</summary><div><p>Обычный ZIP технически можно копировать. Именной архив и правила использования не являются технической защитой от копирования и не дают права передавать агент третьим лицам. Для собственного доступа сохраняйте архив в закрытом хранилище.</p></div></details></div><div class="cta-line"><span>Не получилось за 2–3 попытки — настроим вместе.</span><a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 <div class="next"><a class="btn ghost" href="#edits">← Как попросить правку</a><a class="btn" href="#get">Получить агента →</a></div>
 </section>
-
 <section class="page" id="p-get">
 <div class="hero"><p class="kicker">Доступ</p><h1>Получить агента</h1><p class="lead">Архив с агентом и эта инструкция — устанавливаете сами. Не разобрались или хотите облако под ключ — консультация.</p></div>
 <div class="offer">
 <div class="card"><span class="tag">Сами по инструкции</span><h3>Архив LAVRI Cut</h3><div class="price">2500р.</div><ul><li>Монтажный агент целиком: правила, навыки, редактор, 48 звуков, шрифты</li><li>Установка на компьютер или в облако по этой инструкции</li><li>Именной экземпляр</li></ul><a class="btn" href="https://t.me/pay_lavri_ai_bot" rel="noopener" target="_blank">Получить архив →</a></div>
 <div class="card"><span class="tag">Вместе со мной</span><h3>Консультация</h3><p>Настроим агента вместе на созвоне: облако с телефоном под ключ, домены, коннекторы, первый ролик.</p><a class="btn ghost" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Забронировать консультацию →</a></div>
 </div>
-<p class="note">Агент уже есть? — <a href="#update">обновите его до новой версии</a>.</p>
+<p class="note">Агент уже есть? — <a href="../lavri-cut-update/?platform=claude">обновите его до новой версии</a>.</p>
 <p class="note">Архив — именной экземпляр авторской методики LAVRI: передавать, копировать и перепродавать его третьим лицам нельзя.<br/>В архиве — только авторский код и методика LAVRI. Агент работает на базе открытых программ (<a href="https://www.remotion.dev/license" rel="noopener" target="_blank">Remotion</a>, FFmpeg, распознавание речи): они в архив не входят — при установке вы скачиваете их сами с официальных сайтов, по их лицензиям. Remotion бесплатен для частных лиц и компаний до 3 сотрудников; компании больше — оформляют лицензию Remotion сами.</p>
 </section>
-
-<section class="page" id="p-update">
-<div class="hero"><p class="kicker">Для тех, у кого агент уже есть</p><h1>Обновить агента</h1><p class="lead">Новые приёмы выходят обновлениями. Ваши ролики, образ, правила и уроки при обновлении сохраняются — агент встраивает только новое.</p></div>
-<div class="step" id="up-1"><span class="num">Шаг 1</span><h3>Получите архив обновления</h3>
-<p>Напишите мне, с какой версии обновляетесь (если не помните — имя вашего агента или репозитория). Пришлю именной архив обновления.</p>
-<a class="btn" href="https://t.me/lavri_ai" rel="noopener" target="_blank">Получить архив для обновления →</a></div>
-<div class="step" id="up-2"><span class="num">Шаг 2 · только облако</span><h3>Обновите домены</h3>
-<p>Шестерёнка у вашей среды → <b>Network access</b> → выделите весь старый список и удалите → вставьте новый <a href="#cl-domains">список доменов</a> целиком → <b>Save changes</b>. Проверьте галочку <b>Allow package managers</b>.</p>
-<figure><img alt="Как заменить список доменов: удалить старый, вставить новый, Save changes" loading="lazy" src="img/c3-domains-replace.jpg"/></figure>
-<p>На компьютере этот шаг не нужен.</p></div>
-<div class="step" id="up-3"><span class="num">Шаг 3</span><h3>Откройте агента</h3>
-<ul><li><b>Компьютер:</b> Claude → Code → «Этот компьютер» → папка вашего агента. Положите архив обновления в эту папку.</li><li><b>Облако:</b> <b>новая</b> сессия → ваша среда (Montage) и ваш репозиторий (XXX). Архив прикрепите к сообщению.</li></ul></div>
-<div class="step" id="up-4"><span class="num">Шаг 4</span><h3>Отправьте промт обновления</h3>
-<div class="copybox"><div class="head">Промт обновления<button class="copy" type="button">Скопировать</button></div><pre>Обнови себя до новой версии из архива обновления (содержимое папки внутри архива) строго по файлу UPDATE.md. Сначала сделай точку возврата: если есть git — коммит и тег, если нет — скопируй всю папку целиком в «копия до обновления». Ничего из моих наработок не удаляй: ролики, бриф, образ, уроки, мои правила и мои правки в коде сохрани. Встрой только то, чего у меня ещё нет. Обязательно перенеси звуковые эффекты из assets/sfx/ и новые шрифты из fonts/. Затем по файлу CLEANUP.md убери следы прошлых версий — только то, что пришло с установкой или обновлением, мои папки не трогай. Подключения (коннекторы, ключи, настройки среды) не трогай. В конце запусти npm run doctor, проверь мои начатые ролики и npm run demo, сохрани изменения (в облаке — commit и push) и коротко расскажи, что нового. Если что-то сломается — верни всё как было.</pre></div>
-<p>Готово, когда агент написал <b>«✅ Готово и проверено»</b> и рассказал, что нового.</p></div>
-<div class="step"><span class="num">Если не получилось</span><h3>Вернуть, как было</h3><p>Напишите «Верни всё как было до обновления» — агент восстановит точку возврата. Пришлите мне скриншот ошибки в <a href="https://t.me/lavri_ai" rel="noopener" target="_blank">@lavri_ai</a>.</p></div>
-<div class="next"><a class="btn ghost" href="#get">← Получить агента</a><a class="btn ghost" href="#home">К началу</a></div>
-</section>
-
+<section class="page" id="p-update"><div class="hero"><p class="kicker">Claude и Codex</p><h1>Обновить агента</h1><p>Одна инструкция для обеих платформ. Установка и личные материалы сохраняются.</p><a class="btn" href="../lavri-cut-update/?platform=claude">Открыть инструкцию обновления →</a></div></section>
 </main>
 <footer class="wrap"><span>LAVRI LOOK · авторская методика LAVRI</span><a href="https://t.me/lavri_ai" rel="noopener" target="_blank">Telegram @lavri_ai</a></footer>
-<script>
-(function(){
-  var pages=['home','pc','cloud','first','editor','more','edits','help','get','update','comp','unpack'];
-  function show(){
-    var h=(location.hash||'#home').slice(1), page='home', target=null;
-    if(pages.indexOf(h)>=0){page=h}else{var el=document.getElementById(h);if(el){var p=el.closest('.page');if(p){page=p.id.slice(2);target=el}}}
-    pages.forEach(function(id){document.getElementById('p-'+id).classList.toggle('on',id===page)});
-    document.querySelectorAll('.tabs a[data-page]').forEach(function(a){if(a.dataset.page===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-    if(target){target.scrollIntoView()}else{window.scrollTo(0,0)}
-  }
-  window.addEventListener('hashchange',show);show();
-  document.addEventListener('click',function(e){
-    var b=e.target.closest('.copy');if(!b)return;
-    var pre=b.closest('.copybox').querySelector('pre');var t=pre.textContent;
-    var done=function(){var o=b.textContent;b.textContent='Скопировано ✓';setTimeout(function(){b.textContent=o},1800)};
-    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){sel(pre);b.textContent='Выделено — скопируйте'})}else{sel(pre);b.textContent='Выделено — скопируйте'}
-  });
-  function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
-})();
-</script>
-</body>
+<nav aria-label="Вернуться" class="guide-shortcuts"><a aria-label="Вернуться к содержанию" href="#contents">↑</a></nav><script src="../../assets/lavri-cut/guide.js?v=codex-1"></script></body>
 </html>
